@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\source\\interactableitems\\private\\interactableitems.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\duarte\\desktop\\fptemplate\\intermediate\\build\\win64\\x64\\fptemplateeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\interactableitems\\definitions.interactableitems.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\source\\interactableitems\\public\\interactableitems.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

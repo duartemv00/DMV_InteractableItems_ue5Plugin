@@ -1,0 +1,26 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\source\\interactableitems\\private\\actor\\dmvworlditem.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\duarte\\desktop\\fptemplate\\intermediate\\build\\win64\\x64\\fptemplateeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\interactableitems\\definitions.interactableitems.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\source\\interactableitems\\public\\actor\\dmvworlditem.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\source\\interactableitems\\public\\itemtemplate.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\gameplaytags\\classes\\gameplaytagcontainer.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\misc\\comparisonutility.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplaytags\\uht\\gameplaytagcontainer.generated.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\itemtemplate.generated.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\source\\interactableitems\\public\\interface\\dmvinteractableitemsinterface.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\dmvinteractableitemsinterface.generated.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\dmvworlditem.generated.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\components\\spherecomponent.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\spherecomponent.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\interactableitems\\module.interactableitems.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\duarte\\desktop\\fptemplate\\intermediate\\build\\win64\\x64\\fptemplateeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\interactableitems\\definitions.interactableitems.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\dmvinspectitem.gen.cpp",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\source\\interactableitems\\public\\actor\\dmvinspectitem.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\dmvinspectitem.generated.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\dmvinteractableitemsinterface.gen.cpp",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\source\\interactableitems\\public\\interface\\dmvinteractableitemsinterface.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\dmvinteractableitemsinterface.generated.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\dmvinteractableitemstypes.gen.cpp",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\source\\interactableitems\\public\\dmvinteractableitemstypes.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\gameplaytags\\classes\\gameplaytagcontainer.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\misc\\comparisonutility.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplaytags\\uht\\gameplaytagcontainer.generated.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\dmvinteractableitemstypes.generated.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\dmvinventorycomponent.gen.cpp",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\source\\interactableitems\\public\\component\\dmvinventorycomponent.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\dmvinventorycomponent.generated.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\dmvworlditem.gen.cpp",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\source\\interactableitems\\public\\actor\\dmvworlditem.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\source\\interactableitems\\public\\itemtemplate.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\itemtemplate.generated.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\dmvworlditem.generated.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\interactableitems.init.gen.cpp",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\itemtemplate.gen.cpp"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
