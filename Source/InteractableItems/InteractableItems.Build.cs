@@ -25,7 +25,7 @@ public class InteractableItems : ModuleRules
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core", "GameplayTags", "UMG"
+				"Core", "GameplayTags", "UMG", "CoreUObject", "Engine", "InputCore"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);

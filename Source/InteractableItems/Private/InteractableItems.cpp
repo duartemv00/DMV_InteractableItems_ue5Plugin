@@ -16,5 +16,5 @@ void FInteractableItemsModule::ShutdownModule()
 }
 
 #undef LOCTEXT_NAMESPACE
-	
+
 IMPLEMENT_MODULE(FInteractableItemsModule, InteractableItems)

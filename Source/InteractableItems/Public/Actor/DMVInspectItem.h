@@ -4,20 +4,24 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Interface/DMVInteractableItemsInterface.h"
 #include "DMVInspectItem.generated.h"
 
 UCLASS()
-class INTERACTABLEITEMS_API ADMVInspectItem : public AActor
+class INTERACTABLEITEMS_API ADMVInspectItem : public AActor, public IDMVInteractableItemsInterface
 {
 	GENERATED_BODY()
 
 public:
 	ADMVInspectItem();
 
-	UFUNCTION()
+	UPROPERTY(BlueprintReadOnly)
+	UStaticMeshComponent* ItemMesh;
+
+	UFUNCTION(BlueprintCallable)
 	void SetInspectRotation(FRotator NewRotation);
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	void SetInspectScale(FVector NewScale);
 
 protected:

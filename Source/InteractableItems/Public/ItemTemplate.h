@@ -7,11 +7,20 @@
 #include "Engine/DataAsset.h"
 #include "ItemTemplate.generated.h"
 
+
+UENUM(BlueprintType)
+enum class EItemUsability : uint8
+{
+	Inspectable,
+	AutoRead,
+	OnlyStorable
+};
+
 USTRUCT(BlueprintType)
 struct FInteractableItemData
 {
 	GENERATED_BODY()
-	
+
 	// ***** Variables that determine the item's identity ***** //
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FGameplayTag Tag;
@@ -27,15 +36,16 @@ struct FInteractableItemData
 	TObjectPtr<USoundWave> InteractSound;
 
 	// ***** Booleans that determine functionalities of the item ***** //
-	// True if you can closely inspect the item moving it around in your hands
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Item|Functionalities")
-	bool bInspectable;
-	// True if you can read the item (e.g. a book or a note)
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Item|Functionalities")
-	bool bReadable;
+	EItemUsability Usability;
 	// True if the item is automatically read when interacted with
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Item|Functionalities")
-	bool bAutoRead;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Item|Functionalities",
+		meta = (EditCondition = "Usability == EItemUsability::Inspectable"))
+	bool bReadable;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Item|Functionalities",
+		meta = (EditCondition = "Usability == EItemUsability::Inspectable || Usability == EItemUsability::AutoRead"))
+	bool bStorable;
+
 	// True if you want the item to be stored in a history log of findings
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Item|Functionalities")
 	bool bHistory;
@@ -50,8 +60,10 @@ struct FInteractableItemData
 	bool bCraftable;
 
 	// ***** Variables that determine the item's characteristics ***** //
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) float Weight;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) float Value;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float Weight;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float Value;
 };
 
 UCLASS(BlueprintType, Blueprintable)
@@ -62,5 +74,4 @@ class INTERACTABLEITEMS_API UItemDatabase : public UDataAsset
 public:
 	UPROPERTY(EditAnywhere)
 	FInteractableItemData Item;
-
 };

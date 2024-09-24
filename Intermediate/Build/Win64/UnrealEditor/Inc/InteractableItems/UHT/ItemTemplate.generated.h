@@ -14,14 +14,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define INTERACTABLEITEMS_ItemTemplate_generated_h
 
-#define FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_13_GENERATED_BODY \
+#define FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_22_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FInteractableItemData_Statics; \
 	INTERACTABLEITEMS_API static class UScriptStruct* StaticStruct();
 
 
 template<> INTERACTABLEITEMS_API UScriptStruct* StaticStruct<struct FInteractableItemData>();
 
-#define FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_60_INCLASS_NO_PURE_DECLS \
+#define FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_72_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUItemDatabase(); \
 	friend struct Z_Construct_UClass_UItemDatabase_Statics; \
@@ -30,7 +30,7 @@ public: \
 	DECLARE_SERIALIZER(UItemDatabase)
 
 
-#define FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_60_ENHANCED_CONSTRUCTORS \
+#define FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_72_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UItemDatabase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -44,12 +44,12 @@ public: \
 	NO_API virtual ~UItemDatabase();
 
 
-#define FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_57_PROLOG
-#define FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_60_GENERATED_BODY \
+#define FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_69_PROLOG
+#define FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_72_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_60_INCLASS_NO_PURE_DECLS \
-	FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_60_ENHANCED_CONSTRUCTORS \
+	FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_72_INCLASS_NO_PURE_DECLS \
+	FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_72_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -59,5 +59,14 @@ template<> INTERACTABLEITEMS_API UClass* StaticClass<class UItemDatabase>();
 #undef CURRENT_FILE_ID
 #define CURRENT_FILE_ID FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h
 
+
+#define FOREACH_ENUM_EITEMUSABILITY(op) \
+	op(EItemUsability::Inspectable) \
+	op(EItemUsability::AutoRead) \
+	op(EItemUsability::OnlyStorable) 
+
+enum class EItemUsability : uint8;
+template<> struct TIsUEnumClass<EItemUsability> { enum { Value = true }; };
+template<> INTERACTABLEITEMS_API UEnum* StaticEnum<EItemUsability>();
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

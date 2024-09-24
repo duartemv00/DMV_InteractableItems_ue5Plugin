@@ -3,5 +3,6 @@
 
 #include "Interface/DMVInteractableItemsInterface.h"
 
+// Add default functionality here for any IMyClass functions that are not pure virtual.
 
-// Add default functionality here for any IDMVInteractableItemsInterface functions that are not pure virtual.
+

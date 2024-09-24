@@ -6,11 +6,12 @@
 #include "UObject/Interface.h"
 #include "DMVInteractableItemsInterface.generated.h"
 
-// This class does not need to be modified.
+
 UINTERFACE()
 class UDMVInteractableItemsInterface : public UInterface
 {
 	GENERATED_BODY()
+	// This class does not need to be modified.
 };
 
 /**
@@ -23,4 +24,11 @@ class INTERACTABLEITEMS_API IDMVInteractableItemsInterface
 public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void OnInteract(ACharacter* InteractingCharacter);
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	void Inspect(ACharacter* InteractingCharacter, UStaticMesh* InspectedItem, FText& GivenItemName,
+	             FText& GivenItemDescription);
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	void Read(ACharacter* InteractingCharacter, FText& ReadableText);
 };

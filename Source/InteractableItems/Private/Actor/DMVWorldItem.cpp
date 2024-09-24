@@ -11,6 +11,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "UI/ReadableTextWidget.h"
+#include "Interface/DMVInteractableItemsInterface.h"
 
 ADMVWorldItem::ADMVWorldItem()
 {
@@ -25,7 +26,7 @@ ADMVWorldItem::ADMVWorldItem()
 	OuterSphereTrigger = CreateDefaultSubobject<USphereComponent>("OuterSphereTrigger");
 	OuterSphereTrigger->SetupAttachment(RootComponent);
 	OuterSphereTrigger->SetSphereRadius(InnerInteractRadius);
-	
+
 	OuterInteractIcon = CreateDefaultSubobject<UBillboardComponent>("OuterInteractIcon");
 	OuterInteractIcon->SetupAttachment(OuterSphereTrigger);
 	OuterSphereTrigger->SetSphereRadius(OuterInteractRadius);
@@ -35,27 +36,45 @@ ADMVWorldItem::ADMVWorldItem()
 
 	InnerInteractIcon = CreateDefaultSubobject<UBillboardComponent>("InnerInteractIcon");
 	InnerInteractIcon->SetupAttachment(InnerSphereCollision);
-	
+
 	SetupItem();
 }
 
 void ADMVWorldItem::OnInteract_Implementation(ACharacter* InteractingCharacter)
 {
 	// IDMVInteractableItemsInterface::OnInteract_Implementation();
-	
+
 	APlayerController* PlayerController = Cast<APlayerController>(InteractingCharacter->GetController());
-	if(!PlayerController) return;
-	
+	if (!PlayerController)
+	{
+		return;
+	}
+
 	UGameplayStatics::PlaySoundAtLocation(this, ItemInteractSound, GetActorLocation());
-	if(bIsAutoRead)
+
+	switch (ItemUsability)
 	{
+	case EItemUsability::AutoRead:
 		DirectTextRead(InteractingCharacter, PlayerController);
+		break;
+	case EItemUsability::Inspectable:
+		InspectItem(InteractingCharacter, PlayerController);
+		break;
+	case EItemUsability::OnlyStorable:
+		// TODO: StoreItem(InteractingCharacter, PlayerController);
+		break;
 	}
-	if(bIsInspectable)
-	{
-		InteractItem(InteractingCharacter, PlayerController);
-	}
-	
+}
+
+void ADMVWorldItem::Inspect_Implementation(ACharacter* InteractingCharacter, UStaticMesh* InspectedItem,
+                                           FText& GivenItemName, FText& GivenItemDescription)
+{
+	// TODO: IDMVInteractableItemsInterface::Inspect_Implementation();
+}
+
+void ADMVWorldItem::Read_Implementation(ACharacter* InteractingCharacter, FText& ReadableText)
+{
+	// TODO: IDMVInteractableItemsInterface::Read_Implementation();
 }
 
 void ADMVWorldItem::BeginPlay()
@@ -81,9 +100,9 @@ void ADMVWorldItem::SetupItem()
 		// Set the item's sound when interacting
 		ItemInteractSound = ItemData->Item.InteractSound;
 		// --> Set the item's functionalities
-		bIsInspectable = ItemData->Item.bInspectable;
+		ItemUsability = ItemData->Item.Usability;
 		bIsReadable = ItemData->Item.bReadable;
-		bIsAutoRead = ItemData->Item.bAutoRead;
+		bIsStorable = ItemData->Item.bStorable;
 		bIsHistory = ItemData->Item.bHistory;
 		bIsUsable = ItemData->Item.bUsable;
 		bIsStackable = ItemData->Item.bStackable;
@@ -95,42 +114,51 @@ void ADMVWorldItem::SetupItem()
 		// Set the interaction sphere radius
 		OuterSphereTrigger->SetSphereRadius(OuterInteractRadius);
 		InnerSphereCollision->SetSphereRadius(InnerInteractRadius);
-	} 
+	}
 }
 
 void ADMVWorldItem::DirectTextRead(ACharacter* InteractingCharacter, APlayerController* PlayerController)
 {
-	if(!bReadControl)
+	if (!bReadControl)
 	{
 		// TODO: Create a control bool.
 		UDMVUserWidget* ReadWidget =
-			CreateWidget<UDMVUserWidget>(GetWorld(), UReadableTextWidget::StaticClass(), "Read");		
+			CreateWidget<UDMVUserWidget>(GetWorld(), UReadableTextWidget::StaticClass(), "Read");
 		ReadWidget->AddToViewport();
 		DisableInput(PlayerController);
 		PlayerController->SetIgnoreLookInput(true);
 		// TODO: Set Render Opacity to 1.0f.
-		
+
 		bReadControl = true;
-	} else
+	}
+	else
 	{
 		// TODO: Set Render Opacity to 0.f.
 		// TODO: ReadWidget->RemoveFromParent();
 		InteractingCharacter->GetCharacterMovement()->SetMovementMode(
 			InteractingCharacter->GetCharacterMovement()->DefaultLandMovementMode);
-		
+
 		PlayerController->SetIgnoreLookInput(false);
 
 		bReadControl = false;
 	}
 }
 
-void ADMVWorldItem::InteractItem(ACharacter* InteractingCharacter, APlayerController* PlayerController)
+void ADMVWorldItem::InspectItem(ACharacter* InteractingCharacter, APlayerController* PlayerController)
 {
 	ADMVInspectItem* InspectItem =
-			NewObject<ADMVInspectItem>(GetWorld(), ADMVInspectItem::StaticClass(), "Inspect");
-	InspectItem->SetActorLocation(FVector(1000000000000,0,0));
-	InspectItem->SetInspectRotation(FRotator(0,0,0));
-	InspectItem->SetInspectScale(FVector(0,0,0));
+		NewObject<ADMVInspectItem>(GetWorld(), ADMVInspectItem::StaticClass(), "Inspect");
+	InspectItem->SetActorLocation(FVector(1000000000000, 0, 0));
+	InspectItem->SetInspectRotation(FRotator(0, 0, 0));
+	InspectItem->SetInspectScale(FVector(0, 0, 0));
+}
+
+void ADMVWorldItem::ReadText(ACharacter* InteractingCharacter, APlayerController* PlayerController)
+{
+}
+
+void ADMVWorldItem::StoreItem(ACharacter* InteractingCharacter, APlayerController* PlayerController)
+{
 }
 
 #if WITH_EDITOR
@@ -145,4 +173,3 @@ void ADMVWorldItem::PostEditChangeProperty(FPropertyChangedEvent& PropertyChange
 	}
 }
 #endif
-

@@ -7,6 +7,8 @@
         "Includes": [
             "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\interactableitems\\definitions.interactableitems.h",
             "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\source\\interactableitems\\public\\actor\\dmvinspectitem.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\source\\interactableitems\\public\\interface\\dmvinteractableitemsinterface.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\dmvinteractableitemsinterface.generated.h",
             "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\dmvinspectitem.generated.h"
         ],
         "ImportedModules": [],

@@ -10,13 +10,18 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class ACharacter;
+class UStaticMesh;
 #ifdef INTERACTABLEITEMS_DMVInteractableItemsInterface_generated_h
 #error "DMVInteractableItemsInterface.generated.h already included, missing '#pragma once' in DMVInteractableItemsInterface.h"
 #endif
 #define INTERACTABLEITEMS_DMVInteractableItemsInterface_generated_h
 
 #define FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Interface_DMVInteractableItemsInterface_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	virtual void Read_Implementation(ACharacter* InteractingCharacter, FText& ReadableText) {}; \
+	virtual void Inspect_Implementation(ACharacter* InteractingCharacter, UStaticMesh* InspectedItem, FText& GivenItemName, FText& GivenItemDescription) {}; \
 	virtual void OnInteract_Implementation(ACharacter* InteractingCharacter) {}; \
+	DECLARE_FUNCTION(execRead); \
+	DECLARE_FUNCTION(execInspect); \
 	DECLARE_FUNCTION(execOnInteract);
 
 
@@ -58,12 +63,14 @@ protected: \
 public: \
 	typedef UDMVInteractableItemsInterface UClassType; \
 	typedef IDMVInteractableItemsInterface ThisClass; \
+	static void Execute_Inspect(UObject* O, ACharacter* InteractingCharacter, UStaticMesh* InspectedItem, FText& GivenItemName, FText& GivenItemDescription); \
 	static void Execute_OnInteract(UObject* O, ACharacter* InteractingCharacter); \
+	static void Execute_Read(UObject* O, ACharacter* InteractingCharacter, FText& ReadableText); \
 	virtual UObject* _getUObject() const { return nullptr; }
 
 
 #define FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Interface_DMVInteractableItemsInterface_h_10_PROLOG
-#define FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Interface_DMVInteractableItemsInterface_h_21_GENERATED_BODY \
+#define FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Interface_DMVInteractableItemsInterface_h_22_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Interface_DMVInteractableItemsInterface_h_13_RPC_WRAPPERS_NO_PURE_DECLS \

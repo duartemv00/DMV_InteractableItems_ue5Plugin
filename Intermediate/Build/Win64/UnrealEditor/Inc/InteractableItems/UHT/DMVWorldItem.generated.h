@@ -11,13 +11,19 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class ACharacter;
 class APlayerController;
+enum class EItemUsability : uint8;
 #ifdef INTERACTABLEITEMS_DMVWorldItem_generated_h
 #error "DMVWorldItem.generated.h already included, missing '#pragma once' in DMVWorldItem.h"
 #endif
 #define INTERACTABLEITEMS_DMVWorldItem_generated_h
 
 #define FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_DMVWorldItem_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execInteractItem); \
+	DECLARE_FUNCTION(execGetIsAutoRead); \
+	DECLARE_FUNCTION(execGetIsReadable); \
+	DECLARE_FUNCTION(execGetIsItemUsability); \
+	DECLARE_FUNCTION(execStoreItem); \
+	DECLARE_FUNCTION(execReadText); \
+	DECLARE_FUNCTION(execInspectItem); \
 	DECLARE_FUNCTION(execDirectTextRead); \
 	DECLARE_FUNCTION(execSetupItem);
 

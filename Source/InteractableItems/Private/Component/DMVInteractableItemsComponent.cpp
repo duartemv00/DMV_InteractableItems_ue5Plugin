@@ -14,13 +14,13 @@ void UDMVInventoryComponent::BeginPlay()
 
 bool UDMVInventoryComponent::AddItemToStoredItems(const FInventoryItemData& Item, int32 Quantity)
 {
-	if(Quantity <= 0) // First check if the quantity is greater than 0
+	if (Quantity <= 0) // First check if the quantity is greater than 0
 	{
 		UE_LOG(LogTemp, Warning, TEXT("You can't add 0 items"));
 		return false;
 	}
 	// Check if the item is already in the map
-	if(StoredItems.Contains(Item))
+	if (StoredItems.Contains(Item))
 	{
 		if (!Item.bIsStackable) // If the item is not stackable, return false
 		{
@@ -31,7 +31,8 @@ bool UDMVInventoryComponent::AddItemToStoredItems(const FInventoryItemData& Item
 		return true;
 	}
 	// If the item is not in the map, add it
-	if(!Item.bIsStackable && Quantity >= 1) // but also check if the item is stackable and the quantity is grater than 1
+	if (!Item.bIsStackable && Quantity >= 1)
+	// but also check if the item is stackable and the quantity is grater than 1
 	{
 		UE_LOG(LogTemp, Warning, TEXT("You need to change the quantity value to 1 for non-stackable items"));
 		return false;
@@ -74,15 +75,14 @@ bool UDMVInventoryComponent::RemoveItemFromStoredItems(const FInventoryItemData&
  */
 bool UDMVInventoryComponent::AddItemToItemsHistory(const FInventoryItemData& Item)
 {
-	if(ItemsHistory.Contains(Item.Tag))
+	if (ItemsHistory.Contains(Item.Tag))
 	{
 		return false;
 	}
-	if(!Item.bIsHistory)
+	if (!Item.bIsHistory)
 	{
 		return false;
 	}
 	ItemsHistory.Add(Item.Tag);
 	return true;
 }
-

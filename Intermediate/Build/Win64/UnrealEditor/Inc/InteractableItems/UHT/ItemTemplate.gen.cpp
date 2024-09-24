@@ -18,9 +18,64 @@ ENGINE_API UClass* Z_Construct_UClass_UTexture2D_NoRegister();
 GAMEPLAYTAGS_API UScriptStruct* Z_Construct_UScriptStruct_FGameplayTag();
 INTERACTABLEITEMS_API UClass* Z_Construct_UClass_UItemDatabase();
 INTERACTABLEITEMS_API UClass* Z_Construct_UClass_UItemDatabase_NoRegister();
+INTERACTABLEITEMS_API UEnum* Z_Construct_UEnum_InteractableItems_EItemUsability();
 INTERACTABLEITEMS_API UScriptStruct* Z_Construct_UScriptStruct_FInteractableItemData();
 UPackage* Z_Construct_UPackage__Script_InteractableItems();
 // End Cross Module References
+
+// Begin Enum EItemUsability
+static FEnumRegistrationInfo Z_Registration_Info_UEnum_EItemUsability;
+static UEnum* EItemUsability_StaticEnum()
+{
+	if (!Z_Registration_Info_UEnum_EItemUsability.OuterSingleton)
+	{
+		Z_Registration_Info_UEnum_EItemUsability.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_InteractableItems_EItemUsability, (UObject*)Z_Construct_UPackage__Script_InteractableItems(), TEXT("EItemUsability"));
+	}
+	return Z_Registration_Info_UEnum_EItemUsability.OuterSingleton;
+}
+template<> INTERACTABLEITEMS_API UEnum* StaticEnum<EItemUsability>()
+{
+	return EItemUsability_StaticEnum();
+}
+struct Z_Construct_UEnum_InteractableItems_EItemUsability_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
+		{ "AutoRead.Name", "EItemUsability::AutoRead" },
+		{ "BlueprintType", "true" },
+		{ "Inspectable.Name", "EItemUsability::Inspectable" },
+		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "OnlyStorable.Name", "EItemUsability::OnlyStorable" },
+	};
+#endif // WITH_METADATA
+	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
+		{ "EItemUsability::Inspectable", (int64)EItemUsability::Inspectable },
+		{ "EItemUsability::AutoRead", (int64)EItemUsability::AutoRead },
+		{ "EItemUsability::OnlyStorable", (int64)EItemUsability::OnlyStorable },
+	};
+	static const UECodeGen_Private::FEnumParams EnumParams;
+};
+const UECodeGen_Private::FEnumParams Z_Construct_UEnum_InteractableItems_EItemUsability_Statics::EnumParams = {
+	(UObject*(*)())Z_Construct_UPackage__Script_InteractableItems,
+	nullptr,
+	"EItemUsability",
+	"EItemUsability",
+	Z_Construct_UEnum_InteractableItems_EItemUsability_Statics::Enumerators,
+	RF_Public|RF_Transient|RF_MarkAsNative,
+	UE_ARRAY_COUNT(Z_Construct_UEnum_InteractableItems_EItemUsability_Statics::Enumerators),
+	EEnumFlags::None,
+	(uint8)UEnum::ECppForm::EnumClass,
+	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_InteractableItems_EItemUsability_Statics::Enum_MetaDataParams), Z_Construct_UEnum_InteractableItems_EItemUsability_Statics::Enum_MetaDataParams)
+};
+UEnum* Z_Construct_UEnum_InteractableItems_EItemUsability()
+{
+	if (!Z_Registration_Info_UEnum_EItemUsability.InnerSingleton)
+	{
+		UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_EItemUsability.InnerSingleton, Z_Construct_UEnum_InteractableItems_EItemUsability_Statics::EnumParams);
+	}
+	return Z_Registration_Info_UEnum_EItemUsability.InnerSingleton;
+}
+// End Enum EItemUsability
 
 // Begin ScriptStruct FInteractableItemData
 static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_InteractableItemData;
@@ -73,35 +128,31 @@ struct Z_Construct_UScriptStruct_FInteractableItemData_Statics
 		{ "Category", "InteractableItemData" },
 		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bInspectable_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Usability_MetaData[] = {
 		{ "Category", "Item|Functionalities" },
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "// ***** Booleans that determine functionalities of the item ***** //\n// True if you can closely inspect the item moving it around in your hands\n" },
+		{ "Comment", "// ***** Booleans that determine functionalities of the item ***** //\n" },
 #endif
 		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
 #if !UE_BUILD_SHIPPING
-		{ "ToolTip", "***** Booleans that determine functionalities of the item *****\nTrue if you can closely inspect the item moving it around in your hands" },
+		{ "ToolTip", "***** Booleans that determine functionalities of the item *****" },
 #endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bReadable_MetaData[] = {
 		{ "Category", "Item|Functionalities" },
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "// True if you can read the item (e.g. a book or a note)\n" },
-#endif
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "True if you can read the item (e.g. a book or a note)" },
-#endif
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bAutoRead_MetaData[] = {
-		{ "Category", "Item|Functionalities" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// True if the item is automatically read when interacted with\n" },
 #endif
+		{ "EditCondition", "Usability == EItemUsability::Inspectable" },
 		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "True if the item is automatically read when interacted with" },
 #endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bStorable_MetaData[] = {
+		{ "Category", "Item|Functionalities" },
+		{ "EditCondition", "Usability == EItemUsability::Inspectable || Usability == EItemUsability::AutoRead" },
+		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bHistory_MetaData[] = {
 		{ "Category", "Item|Functionalities" },
@@ -164,12 +215,12 @@ struct Z_Construct_UScriptStruct_FInteractableItemData_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Icon;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Mesh;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_InteractSound;
-	static void NewProp_bInspectable_SetBit(void* Obj);
-	static const UECodeGen_Private::FBoolPropertyParams NewProp_bInspectable;
+	static const UECodeGen_Private::FBytePropertyParams NewProp_Usability_Underlying;
+	static const UECodeGen_Private::FEnumPropertyParams NewProp_Usability;
 	static void NewProp_bReadable_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bReadable;
-	static void NewProp_bAutoRead_SetBit(void* Obj);
-	static const UECodeGen_Private::FBoolPropertyParams NewProp_bAutoRead;
+	static void NewProp_bStorable_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bStorable;
 	static void NewProp_bHistory_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bHistory;
 	static void NewProp_bUsable_SetBit(void* Obj);
@@ -193,21 +244,18 @@ const UECodeGen_Private::FNamePropertyParams Z_Construct_UScriptStruct_FInteract
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_Icon = { "Icon", nullptr, (EPropertyFlags)0x0114000000000005, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FInteractableItemData, Icon), Z_Construct_UClass_UTexture2D_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Icon_MetaData), NewProp_Icon_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_Mesh = { "Mesh", nullptr, (EPropertyFlags)0x0114000000000005, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FInteractableItemData, Mesh), Z_Construct_UClass_UStreamableRenderAsset_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Mesh_MetaData), NewProp_Mesh_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_InteractSound = { "InteractSound", nullptr, (EPropertyFlags)0x0114000000000005, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FInteractableItemData, InteractSound), Z_Construct_UClass_USoundWave_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InteractSound_MetaData), NewProp_InteractSound_MetaData) };
-void Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bInspectable_SetBit(void* Obj)
-{
-	((FInteractableItemData*)Obj)->bInspectable = 1;
-}
-const UECodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bInspectable = { "bInspectable", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(FInteractableItemData), &Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bInspectable_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bInspectable_MetaData), NewProp_bInspectable_MetaData) };
+const UECodeGen_Private::FBytePropertyParams Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_Usability_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_Usability = { "Usability", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FInteractableItemData, Usability), Z_Construct_UEnum_InteractableItems_EItemUsability, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Usability_MetaData), NewProp_Usability_MetaData) }; // 1269168880
 void Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bReadable_SetBit(void* Obj)
 {
 	((FInteractableItemData*)Obj)->bReadable = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bReadable = { "bReadable", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(FInteractableItemData), &Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bReadable_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bReadable_MetaData), NewProp_bReadable_MetaData) };
-void Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bAutoRead_SetBit(void* Obj)
+void Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bStorable_SetBit(void* Obj)
 {
-	((FInteractableItemData*)Obj)->bAutoRead = 1;
+	((FInteractableItemData*)Obj)->bStorable = 1;
 }
-const UECodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bAutoRead = { "bAutoRead", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(FInteractableItemData), &Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bAutoRead_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bAutoRead_MetaData), NewProp_bAutoRead_MetaData) };
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bStorable = { "bStorable", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(FInteractableItemData), &Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bStorable_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bStorable_MetaData), NewProp_bStorable_MetaData) };
 void Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bHistory_SetBit(void* Obj)
 {
 	((FInteractableItemData*)Obj)->bHistory = 1;
@@ -237,9 +285,10 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FI
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_Icon,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_Mesh,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_InteractSound,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bInspectable,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_Usability_Underlying,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_Usability,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bReadable,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bAutoRead,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bStorable,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bHistory,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bUsable,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bStackable,
@@ -302,7 +351,7 @@ struct Z_Construct_UClass_UItemDatabase_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UItemDatabase_Statics::NewProp_Item = { "Item", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UItemDatabase, Item), Z_Construct_UScriptStruct_FInteractableItemData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Item_MetaData), NewProp_Item_MetaData) }; // 3081898751
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UItemDatabase_Statics::NewProp_Item = { "Item", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UItemDatabase, Item), Z_Construct_UScriptStruct_FInteractableItemData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Item_MetaData), NewProp_Item_MetaData) }; // 3028230135
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UItemDatabase_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UItemDatabase_Statics::NewProp_Item,
 };
@@ -347,16 +396,19 @@ UItemDatabase::~UItemDatabase() {}
 // Begin Registration
 struct Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_Statics
 {
+	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
+		{ EItemUsability_StaticEnum, TEXT("EItemUsability"), &Z_Registration_Info_UEnum_EItemUsability, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1269168880U) },
+	};
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FInteractableItemData::StaticStruct, Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewStructOps, TEXT("InteractableItemData"), &Z_Registration_Info_UScriptStruct_InteractableItemData, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FInteractableItemData), 3081898751U) },
+		{ FInteractableItemData::StaticStruct, Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewStructOps, TEXT("InteractableItemData"), &Z_Registration_Info_UScriptStruct_InteractableItemData, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FInteractableItemData), 3028230135U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UItemDatabase, UItemDatabase::StaticClass, TEXT("UItemDatabase"), &Z_Registration_Info_UClass_UItemDatabase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItemDatabase), 2217290797U) },
+		{ Z_Construct_UClass_UItemDatabase, UItemDatabase::StaticClass, TEXT("UItemDatabase"), &Z_Registration_Info_UClass_UItemDatabase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItemDatabase), 2023523053U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_3481976056(TEXT("/Script/InteractableItems"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_1081126798(TEXT("/Script/InteractableItems"),
 	Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_Statics::ClassInfo),
 	Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_Statics::ScriptStructInfo),
-	nullptr, 0);
+	Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_Statics::EnumInfo));
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
