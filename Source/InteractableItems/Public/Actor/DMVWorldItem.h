@@ -26,12 +26,13 @@ public:
 	float OuterInteractRadius = 100.0f;
 	// END - World Item properties
 
-	void OnInteract_Implementation(ACharacter* InteractingCharacter) override;
-	void Inspect_Implementation(
-		ACharacter* InteractingCharacter, UStaticMesh* InspectedItem, FText& GivenItemName, FText& GivenItemDescription) override;
-	void Read_Implementation(
-		ACharacter* InteractingCharacter, FText& ReadableText) override;
+	UPROPERTY(EditInstanceOnly)
+	FRotator InitialInspectRotation;
 
+	UPROPERTY(EditInstanceOnly)
+	FVector InitialInspectScale;
+
+	virtual void OnInteract_Implementation(ACharacter* InteractingCharacter) override;
 
 protected:
 	virtual void BeginPlay() override;
@@ -43,7 +44,7 @@ protected:
 	void DirectTextRead(ACharacter* InteractingCharacter, APlayerController* PlayerController);
 
 	UFUNCTION()
-	void InspectItem(ACharacter* InteractingCharacter, APlayerController* PlayerController);
+	void InspectableFunctionality(ACharacter* InteractingCharacter, APlayerController* PlayerController);
 
 	UFUNCTION()
 	void ReadText(ACharacter* InteractingCharacter, APlayerController* PlayerController);

@@ -10,6 +10,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeDMVInspectItem() {}
 
 // Begin Cross Module References
+COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FRotator();
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 ENGINE_API UClass* Z_Construct_UClass_AActor();
@@ -17,6 +18,7 @@ ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 INTERACTABLEITEMS_API UClass* Z_Construct_UClass_ADMVInspectItem();
 INTERACTABLEITEMS_API UClass* Z_Construct_UClass_ADMVInspectItem_NoRegister();
 INTERACTABLEITEMS_API UClass* Z_Construct_UClass_UDMVInteractableItemsInterface_NoRegister();
+UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
 UPackage* Z_Construct_UPackage__Script_InteractableItems();
 // End Cross Module References
 
@@ -131,8 +133,13 @@ struct Z_Construct_UClass_ADMVInspectItem_Statics
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/Actor/DMVInspectItem.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InspectWidgetClass_MetaData[] = {
+		{ "Category", "DMVInspectItem" },
+		{ "ModuleRelativePath", "Public/Actor/DMVInspectItem.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ItemMesh;
+	static const UECodeGen_Private::FClassPropertyParams NewProp_InspectWidgetClass;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -147,8 +154,10 @@ struct Z_Construct_UClass_ADMVInspectItem_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADMVInspectItem_Statics::NewProp_ItemMesh = { "ItemMesh", nullptr, (EPropertyFlags)0x001000000008001c, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVInspectItem, ItemMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemMesh_MetaData), NewProp_ItemMesh_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ADMVInspectItem_Statics::NewProp_InspectWidgetClass = { "InspectWidgetClass", nullptr, (EPropertyFlags)0x0014000000010001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVInspectItem, InspectWidgetClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UUserWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InspectWidgetClass_MetaData), NewProp_InspectWidgetClass_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ADMVInspectItem_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVInspectItem_Statics::NewProp_ItemMesh,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVInspectItem_Statics::NewProp_InspectWidgetClass,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ADMVInspectItem_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ADMVInspectItem_Statics::DependentSingletons[])() = {
@@ -157,7 +166,7 @@ UObject* (*const Z_Construct_UClass_ADMVInspectItem_Statics::DependentSingletons
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ADMVInspectItem_Statics::DependentSingletons) < 16);
 const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_ADMVInspectItem_Statics::InterfaceParams[] = {
-	{ Z_Construct_UClass_UDMVInteractableItemsInterface_NoRegister, (int32)VTABLE_OFFSET(ADMVInspectItem, IDMVInteractableItemsInterface), false },  // 767820097
+	{ Z_Construct_UClass_UDMVInteractableItemsInterface_NoRegister, (int32)VTABLE_OFFSET(ADMVInspectItem, IDMVInteractableItemsInterface), false },  // 2492626293
 };
 const UECodeGen_Private::FClassParams Z_Construct_UClass_ADMVInspectItem_Statics::ClassParams = {
 	&ADMVInspectItem::StaticClass,
@@ -194,10 +203,10 @@ ADMVInspectItem::~ADMVInspectItem() {}
 struct Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_DMVInspectItem_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ADMVInspectItem, ADMVInspectItem::StaticClass, TEXT("ADMVInspectItem"), &Z_Registration_Info_UClass_ADMVInspectItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADMVInspectItem), 2036276130U) },
+		{ Z_Construct_UClass_ADMVInspectItem, ADMVInspectItem::StaticClass, TEXT("ADMVInspectItem"), &Z_Registration_Info_UClass_ADMVInspectItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADMVInspectItem), 3183271966U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_DMVInspectItem_h_3484629368(TEXT("/Script/InteractableItems"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_DMVInspectItem_h_1930046842(TEXT("/Script/InteractableItems"),
 	Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_DMVInspectItem_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_DMVInspectItem_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

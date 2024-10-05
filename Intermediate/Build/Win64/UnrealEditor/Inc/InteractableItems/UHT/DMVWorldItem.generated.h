@@ -23,7 +23,7 @@ enum class EItemUsability : uint8;
 	DECLARE_FUNCTION(execGetIsItemUsability); \
 	DECLARE_FUNCTION(execStoreItem); \
 	DECLARE_FUNCTION(execReadText); \
-	DECLARE_FUNCTION(execInspectItem); \
+	DECLARE_FUNCTION(execInspectableFunctionality); \
 	DECLARE_FUNCTION(execDirectTextRead); \
 	DECLARE_FUNCTION(execSetupItem);
 

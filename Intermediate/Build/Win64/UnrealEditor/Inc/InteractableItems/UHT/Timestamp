@@ -1,8 +1,13 @@
 C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source\InteractableItems\Public\DMVInteractableItemsTypes.h
+C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source\InteractableItems\Public\UI\DMVInspectWidget.h
 C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source\InteractableItems\Public\Interface\DMVInteractableItemsInterface.h
-C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source\InteractableItems\Public\Actor\DMVWorldItem.h
-C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source\InteractableItems\Public\Actor\DMVInspectItem.h
-C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source\InteractableItems\Public\ItemTemplate.h
 C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source\InteractableItems\Public\UI\DMVUserWidget.h
+C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source\InteractableItems\Public\Actor\DMVWorldItem.h
 C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source\InteractableItems\Public\Component\DMVInventoryComponent.h
+C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source\InteractableItems\Public\ItemTemplate.h
+C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source\InteractableItems\Public\Actor\DMVInspectItem.h
 C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source\InteractableItems\Public\UI\ReadableTextWidget.h
+C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source\InteractableItems\Public\UI\WidgetController\DMVWidgetController_Overlay.h
+C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source\InteractableItems\Public\UI\HUD\DMVHUD.h
+C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source\InteractableItems\Public\UI\WidgetController\DMVWidgetController_ItemInspect.h
+C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source\InteractableItems\Public\UI\WidgetController\DMVWidgetController.h

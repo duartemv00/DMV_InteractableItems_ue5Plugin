@@ -2,3 +2,9 @@
 
 
 #include "UI/DMVUserWidget.h"
+
+void UDMVUserWidget::SetWidgetController(UObject* InWidgetController)
+{
+	WidgetController = InWidgetController;
+	WidgetControllerSet();
+}

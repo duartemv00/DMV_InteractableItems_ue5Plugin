@@ -2,11 +2,14 @@
 	"RemapUnityFiles": 
 	{
 		"Module.InteractableItems.cpp.obj": [
+			"DMVHUD.gen.cpp.obj",
 			"DMVInspectItem.gen.cpp.obj",
+			"DMVInspectWidget.gen.cpp.obj",
 			"DMVInteractableItemsInterface.gen.cpp.obj",
 			"DMVInteractableItemsTypes.gen.cpp.obj",
 			"DMVInventoryComponent.gen.cpp.obj",
 			"DMVUserWidget.gen.cpp.obj",
+			"DMVWidgetController.gen.cpp.obj",
 			"DMVWorldItem.gen.cpp.obj",
 			"InteractableItems.init.gen.cpp.obj",
 			"ItemTemplate.gen.cpp.obj",
@@ -15,8 +18,12 @@
 			"DMVWorldItem.cpp.obj",
 			"DMVInteractableItemsComponent.cpp.obj",
 			"InteractableItems.cpp.obj",
+			"DMVInteractableItemsInterface.cpp.obj",
 			"ItemTemplate.cpp.obj",
+			"DMVInspectWidget.cpp.obj",
 			"DMVUserWidget.cpp.obj",
+			"DMVWidgetController.cpp.obj",
+			"DMVHUD.cpp.obj",
 			"ReadableTextWidget.cpp.obj"
 		]
 	}

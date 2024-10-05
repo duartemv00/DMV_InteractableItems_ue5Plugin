@@ -7,7 +7,7 @@
 #include "DMVInteractableItemsInterface.generated.h"
 
 
-UINTERFACE()
+UINTERFACE(MinimalAPI, BlueprintType)
 class UDMVInteractableItemsInterface : public UInterface
 {
 	GENERATED_BODY()
@@ -26,8 +26,8 @@ public:
 	void OnInteract(ACharacter* InteractingCharacter);
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
-	void Inspect(ACharacter* InteractingCharacter, UStaticMesh* InspectedItem, FText& GivenItemName,
-	             FText& GivenItemDescription);
+	void Inspect(ACharacter* InteractingCharacter, UStaticMesh* InspectedItem, FName& GivenItemName,
+	             FName& GivenItemDescription);
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void Read(ACharacter* InteractingCharacter, FText& ReadableText);

@@ -265,7 +265,7 @@ UObject* (*const Z_Construct_UClass_UDMVInventoryComponent_Statics::DependentSin
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UDMVInventoryComponent_Statics::DependentSingletons) < 16);
 const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_UDMVInventoryComponent_Statics::InterfaceParams[] = {
-	{ Z_Construct_UClass_UDMVInteractableItemsInterface_NoRegister, (int32)VTABLE_OFFSET(UDMVInventoryComponent, IDMVInteractableItemsInterface), false },  // 767820097
+	{ Z_Construct_UClass_UDMVInteractableItemsInterface_NoRegister, (int32)VTABLE_OFFSET(UDMVInventoryComponent, IDMVInteractableItemsInterface), false },  // 2492626293
 };
 const UECodeGen_Private::FClassParams Z_Construct_UClass_UDMVInventoryComponent_Statics::ClassParams = {
 	&UDMVInventoryComponent::StaticClass,
@@ -302,10 +302,10 @@ UDMVInventoryComponent::~UDMVInventoryComponent() {}
 struct Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Component_DMVInventoryComponent_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UDMVInventoryComponent, UDMVInventoryComponent::StaticClass, TEXT("UDMVInventoryComponent"), &Z_Registration_Info_UClass_UDMVInventoryComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDMVInventoryComponent), 2455882832U) },
+		{ Z_Construct_UClass_UDMVInventoryComponent, UDMVInventoryComponent::StaticClass, TEXT("UDMVInventoryComponent"), &Z_Registration_Info_UClass_UDMVInventoryComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDMVInventoryComponent), 716467814U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Component_DMVInventoryComponent_h_1270743838(TEXT("/Script/InteractableItems"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Component_DMVInventoryComponent_h_1302784545(TEXT("/Script/InteractableItems"),
 	Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Component_DMVInventoryComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Component_DMVInventoryComponent_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

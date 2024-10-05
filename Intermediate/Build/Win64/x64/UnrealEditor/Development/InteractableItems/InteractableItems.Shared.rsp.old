@@ -282,6 +282,7 @@
 /I "Editor\SceneDepthPickerMode\Public"
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\AnimationEditMode\UHT"
 /I "Editor\AnimationEditMode\Public"
+/I "C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Intermediate\Build\Win64\UnrealEditor\Inc\InteractableItems\UHT"
 /I "C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source"
 /I "C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source\InteractableItems\Public"
 /external:W0

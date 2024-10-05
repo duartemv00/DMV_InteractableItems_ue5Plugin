@@ -18,7 +18,7 @@ class UStaticMesh;
 
 #define FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Interface_DMVInteractableItemsInterface_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
 	virtual void Read_Implementation(ACharacter* InteractingCharacter, FText& ReadableText) {}; \
-	virtual void Inspect_Implementation(ACharacter* InteractingCharacter, UStaticMesh* InspectedItem, FText& GivenItemName, FText& GivenItemDescription) {}; \
+	virtual void Inspect_Implementation(ACharacter* InteractingCharacter, UStaticMesh* InspectedItem, FName& GivenItemName, FName& GivenItemDescription) {}; \
 	virtual void OnInteract_Implementation(ACharacter* InteractingCharacter) {}; \
 	DECLARE_FUNCTION(execRead); \
 	DECLARE_FUNCTION(execInspect); \
@@ -28,16 +28,16 @@ class UStaticMesh;
 #define FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Interface_DMVInteractableItemsInterface_h_13_CALLBACK_WRAPPERS
 #define FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Interface_DMVInteractableItemsInterface_h_13_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API UDMVInteractableItemsInterface(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	INTERACTABLEITEMS_API UDMVInteractableItemsInterface(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UDMVInteractableItemsInterface(UDMVInteractableItemsInterface&&); \
 	UDMVInteractableItemsInterface(const UDMVInteractableItemsInterface&); \
 public: \
-	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UDMVInteractableItemsInterface); \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(INTERACTABLEITEMS_API, UDMVInteractableItemsInterface); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UDMVInteractableItemsInterface); \
 	DEFINE_ABSTRACT_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UDMVInteractableItemsInterface) \
-	NO_API virtual ~UDMVInteractableItemsInterface();
+	INTERACTABLEITEMS_API virtual ~UDMVInteractableItemsInterface();
 
 
 #define FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Interface_DMVInteractableItemsInterface_h_13_GENERATED_UINTERFACE_BODY() \
@@ -45,7 +45,7 @@ private: \
 	static void StaticRegisterNativesUDMVInteractableItemsInterface(); \
 	friend struct Z_Construct_UClass_UDMVInteractableItemsInterface_Statics; \
 public: \
-	DECLARE_CLASS(UDMVInteractableItemsInterface, UInterface, COMPILED_IN_FLAGS(CLASS_Abstract | CLASS_Interface), CASTCLASS_None, TEXT("/Script/InteractableItems"), NO_API) \
+	DECLARE_CLASS(UDMVInteractableItemsInterface, UInterface, COMPILED_IN_FLAGS(CLASS_Abstract | CLASS_Interface), CASTCLASS_None, TEXT("/Script/InteractableItems"), INTERACTABLEITEMS_API) \
 	DECLARE_SERIALIZER(UDMVInteractableItemsInterface)
 
 
@@ -63,7 +63,7 @@ protected: \
 public: \
 	typedef UDMVInteractableItemsInterface UClassType; \
 	typedef IDMVInteractableItemsInterface ThisClass; \
-	static void Execute_Inspect(UObject* O, ACharacter* InteractingCharacter, UStaticMesh* InspectedItem, FText& GivenItemName, FText& GivenItemDescription); \
+	static void Execute_Inspect(UObject* O, ACharacter* InteractingCharacter, UStaticMesh* InspectedItem, FName& GivenItemName, FName& GivenItemDescription); \
 	static void Execute_OnInteract(UObject* O, ACharacter* InteractingCharacter); \
 	static void Execute_Read(UObject* O, ACharacter* InteractingCharacter, FText& ReadableText); \
 	virtual UObject* _getUObject() const { return nullptr; }

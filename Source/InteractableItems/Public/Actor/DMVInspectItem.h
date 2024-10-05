@@ -7,6 +7,8 @@
 #include "Interface/DMVInteractableItemsInterface.h"
 #include "DMVInspectItem.generated.h"
 
+class UDMVInspectWidget;
+
 UCLASS()
 class INTERACTABLEITEMS_API ADMVInspectItem : public AActor, public IDMVInteractableItemsInterface
 {
@@ -14,9 +16,16 @@ class INTERACTABLEITEMS_API ADMVInspectItem : public AActor, public IDMVInteract
 
 public:
 	ADMVInspectItem();
+	
+	virtual void Inspect_Implementation(
+		ACharacter* InteractingCharacter, UStaticMesh* InspectedItem, FName& GivenItemName, FName& GivenItemDescription) override;
+	virtual void Read_Implementation(ACharacter* InteractingCharacter, FText& ReadableText) override;
 
 	UPROPERTY(BlueprintReadOnly)
 	UStaticMeshComponent* ItemMesh;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UUserWidget> InspectWidgetClass;
 
 	UFUNCTION(BlueprintCallable)
 	void SetInspectRotation(FRotator NewRotation);

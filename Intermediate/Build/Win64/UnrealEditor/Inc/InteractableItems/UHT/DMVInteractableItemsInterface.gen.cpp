@@ -23,15 +23,15 @@ struct DMVInteractableItemsInterface_eventInspect_Parms
 {
 	ACharacter* InteractingCharacter;
 	UStaticMesh* InspectedItem;
-	FText GivenItemName;
-	FText GivenItemDescription;
+	FName GivenItemName;
+	FName GivenItemDescription;
 };
-void IDMVInteractableItemsInterface::Inspect(ACharacter* InteractingCharacter, UStaticMesh* InspectedItem, FText& GivenItemName, FText& GivenItemDescription)
+void IDMVInteractableItemsInterface::Inspect(ACharacter* InteractingCharacter, UStaticMesh* InspectedItem, FName& GivenItemName, FName& GivenItemDescription)
 {
 	check(0 && "Do not directly call Event functions in Interfaces. Call Execute_Inspect instead.");
 }
 static FName NAME_UDMVInteractableItemsInterface_Inspect = FName(TEXT("Inspect"));
-void IDMVInteractableItemsInterface::Execute_Inspect(UObject* O, ACharacter* InteractingCharacter, UStaticMesh* InspectedItem, FText& GivenItemName, FText& GivenItemDescription)
+void IDMVInteractableItemsInterface::Execute_Inspect(UObject* O, ACharacter* InteractingCharacter, UStaticMesh* InspectedItem, FName& GivenItemName, FName& GivenItemDescription)
 {
 	check(O != NULL);
 	check(O->GetClass()->ImplementsInterface(UDMVInteractableItemsInterface::StaticClass()));
@@ -61,15 +61,15 @@ struct Z_Construct_UFunction_UDMVInteractableItemsInterface_Inspect_Statics
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_InteractingCharacter;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_InspectedItem;
-	static const UECodeGen_Private::FTextPropertyParams NewProp_GivenItemName;
-	static const UECodeGen_Private::FTextPropertyParams NewProp_GivenItemDescription;
+	static const UECodeGen_Private::FNamePropertyParams NewProp_GivenItemName;
+	static const UECodeGen_Private::FNamePropertyParams NewProp_GivenItemDescription;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UDMVInteractableItemsInterface_Inspect_Statics::NewProp_InteractingCharacter = { "InteractingCharacter", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DMVInteractableItemsInterface_eventInspect_Parms, InteractingCharacter), Z_Construct_UClass_ACharacter_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UDMVInteractableItemsInterface_Inspect_Statics::NewProp_InspectedItem = { "InspectedItem", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DMVInteractableItemsInterface_eventInspect_Parms, InspectedItem), Z_Construct_UClass_UStaticMesh_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FTextPropertyParams Z_Construct_UFunction_UDMVInteractableItemsInterface_Inspect_Statics::NewProp_GivenItemName = { "GivenItemName", nullptr, (EPropertyFlags)0x0010000000000180, UECodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DMVInteractableItemsInterface_eventInspect_Parms, GivenItemName), METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FTextPropertyParams Z_Construct_UFunction_UDMVInteractableItemsInterface_Inspect_Statics::NewProp_GivenItemDescription = { "GivenItemDescription", nullptr, (EPropertyFlags)0x0010000000000180, UECodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DMVInteractableItemsInterface_eventInspect_Parms, GivenItemDescription), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FNamePropertyParams Z_Construct_UFunction_UDMVInteractableItemsInterface_Inspect_Statics::NewProp_GivenItemName = { "GivenItemName", nullptr, (EPropertyFlags)0x0010000000000180, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DMVInteractableItemsInterface_eventInspect_Parms, GivenItemName), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FNamePropertyParams Z_Construct_UFunction_UDMVInteractableItemsInterface_Inspect_Statics::NewProp_GivenItemDescription = { "GivenItemDescription", nullptr, (EPropertyFlags)0x0010000000000180, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DMVInteractableItemsInterface_eventInspect_Parms, GivenItemDescription), METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UDMVInteractableItemsInterface_Inspect_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UDMVInteractableItemsInterface_Inspect_Statics::NewProp_InteractingCharacter,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UDMVInteractableItemsInterface_Inspect_Statics::NewProp_InspectedItem,
@@ -92,8 +92,8 @@ DEFINE_FUNCTION(IDMVInteractableItemsInterface::execInspect)
 {
 	P_GET_OBJECT(ACharacter,Z_Param_InteractingCharacter);
 	P_GET_OBJECT(UStaticMesh,Z_Param_InspectedItem);
-	P_GET_PROPERTY_REF(FTextProperty,Z_Param_Out_GivenItemName);
-	P_GET_PROPERTY_REF(FTextProperty,Z_Param_Out_GivenItemDescription);
+	P_GET_PROPERTY_REF(FNameProperty,Z_Param_Out_GivenItemName);
+	P_GET_PROPERTY_REF(FNameProperty,Z_Param_Out_GivenItemDescription);
 	P_FINISH;
 	P_NATIVE_BEGIN;
 	P_THIS->Inspect_Implementation(Z_Param_InteractingCharacter,Z_Param_InspectedItem,Z_Param_Out_GivenItemName,Z_Param_Out_GivenItemDescription);
@@ -254,12 +254,13 @@ struct Z_Construct_UClass_UDMVInteractableItemsInterface_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
 		{ "ModuleRelativePath", "Public/Interface/DMVInteractableItemsInterface.h" },
 	};
 #endif // WITH_METADATA
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UDMVInteractableItemsInterface_Inspect, "Inspect" }, // 1930368209
+		{ &Z_Construct_UFunction_UDMVInteractableItemsInterface_Inspect, "Inspect" }, // 3959118155
 		{ &Z_Construct_UFunction_UDMVInteractableItemsInterface_OnInteract, "OnInteract" }, // 2093754898
 		{ &Z_Construct_UFunction_UDMVInteractableItemsInterface_Read, "Read" }, // 303745003
 	};
@@ -286,7 +287,7 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_UDMVInteractableItemsIn
 	UE_ARRAY_COUNT(FuncInfo),
 	0,
 	0,
-	0x000040A1u,
+	0x000840A1u,
 	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UDMVInteractableItemsInterface_Statics::Class_MetaDataParams), Z_Construct_UClass_UDMVInteractableItemsInterface_Statics::Class_MetaDataParams)
 };
 UClass* Z_Construct_UClass_UDMVInteractableItemsInterface()
@@ -310,10 +311,10 @@ UDMVInteractableItemsInterface::~UDMVInteractableItemsInterface() {}
 struct Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Interface_DMVInteractableItemsInterface_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UDMVInteractableItemsInterface, UDMVInteractableItemsInterface::StaticClass, TEXT("UDMVInteractableItemsInterface"), &Z_Registration_Info_UClass_UDMVInteractableItemsInterface, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDMVInteractableItemsInterface), 767820097U) },
+		{ Z_Construct_UClass_UDMVInteractableItemsInterface, UDMVInteractableItemsInterface::StaticClass, TEXT("UDMVInteractableItemsInterface"), &Z_Registration_Info_UClass_UDMVInteractableItemsInterface, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDMVInteractableItemsInterface), 2492626293U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Interface_DMVInteractableItemsInterface_h_452557100(TEXT("/Script/InteractableItems"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Interface_DMVInteractableItemsInterface_h_3230417290(TEXT("/Script/InteractableItems"),
 	Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Interface_DMVInteractableItemsInterface_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Interface_DMVInteractableItemsInterface_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

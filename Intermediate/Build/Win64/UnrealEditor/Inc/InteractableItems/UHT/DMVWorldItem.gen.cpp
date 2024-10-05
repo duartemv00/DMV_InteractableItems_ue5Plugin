@@ -11,6 +11,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeDMVWorldItem() {}
 
 // Begin Cross Module References
+COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FRotator();
+COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 ENGINE_API UClass* Z_Construct_UClass_AActor();
 ENGINE_API UClass* Z_Construct_UClass_ACharacter_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_APlayerController_NoRegister();
@@ -230,10 +232,10 @@ DEFINE_FUNCTION(ADMVWorldItem::execGetIsReadable)
 }
 // End Class ADMVWorldItem Function GetIsReadable
 
-// Begin Class ADMVWorldItem Function InspectItem
-struct Z_Construct_UFunction_ADMVWorldItem_InspectItem_Statics
+// Begin Class ADMVWorldItem Function InspectableFunctionality
+struct Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics
 {
-	struct DMVWorldItem_eventInspectItem_Parms
+	struct DMVWorldItem_eventInspectableFunctionality_Parms
 	{
 		ACharacter* InteractingCharacter;
 		APlayerController* PlayerController;
@@ -248,34 +250,34 @@ struct Z_Construct_UFunction_ADMVWorldItem_InspectItem_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ADMVWorldItem_InspectItem_Statics::NewProp_InteractingCharacter = { "InteractingCharacter", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DMVWorldItem_eventInspectItem_Parms, InteractingCharacter), Z_Construct_UClass_ACharacter_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ADMVWorldItem_InspectItem_Statics::NewProp_PlayerController = { "PlayerController", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DMVWorldItem_eventInspectItem_Parms, PlayerController), Z_Construct_UClass_APlayerController_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ADMVWorldItem_InspectItem_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADMVWorldItem_InspectItem_Statics::NewProp_InteractingCharacter,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADMVWorldItem_InspectItem_Statics::NewProp_PlayerController,
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::NewProp_InteractingCharacter = { "InteractingCharacter", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DMVWorldItem_eventInspectableFunctionality_Parms, InteractingCharacter), Z_Construct_UClass_ACharacter_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::NewProp_PlayerController = { "PlayerController", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DMVWorldItem_eventInspectableFunctionality_Parms, PlayerController), Z_Construct_UClass_APlayerController_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::NewProp_InteractingCharacter,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::NewProp_PlayerController,
 };
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ADMVWorldItem_InspectItem_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADMVWorldItem_InspectItem_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ADMVWorldItem, nullptr, "InspectItem", nullptr, nullptr, Z_Construct_UFunction_ADMVWorldItem_InspectItem_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADMVWorldItem_InspectItem_Statics::PropPointers), sizeof(Z_Construct_UFunction_ADMVWorldItem_InspectItem_Statics::DMVWorldItem_eventInspectItem_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADMVWorldItem_InspectItem_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADMVWorldItem_InspectItem_Statics::Function_MetaDataParams) };
-static_assert(sizeof(Z_Construct_UFunction_ADMVWorldItem_InspectItem_Statics::DMVWorldItem_eventInspectItem_Parms) < MAX_uint16);
-UFunction* Z_Construct_UFunction_ADMVWorldItem_InspectItem()
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ADMVWorldItem, nullptr, "InspectableFunctionality", nullptr, nullptr, Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::PropPointers), sizeof(Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::DMVWorldItem_eventInspectableFunctionality_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::DMVWorldItem_eventInspectableFunctionality_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality()
 {
 	static UFunction* ReturnFunction = nullptr;
 	if (!ReturnFunction)
 	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ADMVWorldItem_InspectItem_Statics::FuncParams);
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::FuncParams);
 	}
 	return ReturnFunction;
 }
-DEFINE_FUNCTION(ADMVWorldItem::execInspectItem)
+DEFINE_FUNCTION(ADMVWorldItem::execInspectableFunctionality)
 {
 	P_GET_OBJECT(ACharacter,Z_Param_InteractingCharacter);
 	P_GET_OBJECT(APlayerController,Z_Param_PlayerController);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->InspectItem(Z_Param_InteractingCharacter,Z_Param_PlayerController);
+	P_THIS->InspectableFunctionality(Z_Param_InteractingCharacter,Z_Param_PlayerController);
 	P_NATIVE_END;
 }
-// End Class ADMVWorldItem Function InspectItem
+// End Class ADMVWorldItem Function InspectableFunctionality
 
 // Begin Class ADMVWorldItem Function ReadText
 struct Z_Construct_UFunction_ADMVWorldItem_ReadText_Statics
@@ -409,7 +411,7 @@ void ADMVWorldItem::StaticRegisterNativesADMVWorldItem()
 		{ "GetIsAutoRead", &ADMVWorldItem::execGetIsAutoRead },
 		{ "GetIsItemUsability", &ADMVWorldItem::execGetIsItemUsability },
 		{ "GetIsReadable", &ADMVWorldItem::execGetIsReadable },
-		{ "InspectItem", &ADMVWorldItem::execInspectItem },
+		{ "InspectableFunctionality", &ADMVWorldItem::execInspectableFunctionality },
 		{ "ReadText", &ADMVWorldItem::execReadText },
 		{ "SetupItem", &ADMVWorldItem::execSetupItem },
 		{ "StoreItem", &ADMVWorldItem::execStoreItem },
@@ -443,6 +445,20 @@ struct Z_Construct_UClass_ADMVWorldItem_Statics
 #endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OuterInteractRadius_MetaData[] = {
+		{ "Category", "DMVWorldItem" },
+		{ "ModuleRelativePath", "Public/Actor/DMVWorldItem.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InitialInspectRotation_MetaData[] = {
+		{ "Category", "DMVWorldItem" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// END - World Item properties\n" },
+#endif
+		{ "ModuleRelativePath", "Public/Actor/DMVWorldItem.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "END - World Item properties" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InitialInspectScale_MetaData[] = {
 		{ "Category", "DMVWorldItem" },
 		{ "ModuleRelativePath", "Public/Actor/DMVWorldItem.h" },
 	};
@@ -554,6 +570,8 @@ struct Z_Construct_UClass_ADMVWorldItem_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ItemData;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_InnerInteractRadius;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_OuterInteractRadius;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_InitialInspectRotation;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_InitialInspectScale;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_NewRootComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_InnerSphereCollision;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_InnerInteractIcon;
@@ -588,7 +606,7 @@ struct Z_Construct_UClass_ADMVWorldItem_Statics
 		{ &Z_Construct_UFunction_ADMVWorldItem_GetIsAutoRead, "GetIsAutoRead" }, // 999847931
 		{ &Z_Construct_UFunction_ADMVWorldItem_GetIsItemUsability, "GetIsItemUsability" }, // 3284555336
 		{ &Z_Construct_UFunction_ADMVWorldItem_GetIsReadable, "GetIsReadable" }, // 2235589780
-		{ &Z_Construct_UFunction_ADMVWorldItem_InspectItem, "InspectItem" }, // 1081984904
+		{ &Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality, "InspectableFunctionality" }, // 4057917778
 		{ &Z_Construct_UFunction_ADMVWorldItem_ReadText, "ReadText" }, // 3275170285
 		{ &Z_Construct_UFunction_ADMVWorldItem_SetupItem, "SetupItem" }, // 1154750904
 		{ &Z_Construct_UFunction_ADMVWorldItem_StoreItem, "StoreItem" }, // 1291612986
@@ -603,6 +621,8 @@ struct Z_Construct_UClass_ADMVWorldItem_Statics
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_ItemData = { "ItemData", nullptr, (EPropertyFlags)0x0114000000000801, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVWorldItem, ItemData), Z_Construct_UClass_UItemDatabase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemData_MetaData), NewProp_ItemData_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_InnerInteractRadius = { "InnerInteractRadius", nullptr, (EPropertyFlags)0x0010000000000801, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVWorldItem, InnerInteractRadius), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InnerInteractRadius_MetaData), NewProp_InnerInteractRadius_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_OuterInteractRadius = { "OuterInteractRadius", nullptr, (EPropertyFlags)0x0010000000000801, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVWorldItem, OuterInteractRadius), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OuterInteractRadius_MetaData), NewProp_OuterInteractRadius_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_InitialInspectRotation = { "InitialInspectRotation", nullptr, (EPropertyFlags)0x0010000000000801, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVWorldItem, InitialInspectRotation), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InitialInspectRotation_MetaData), NewProp_InitialInspectRotation_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_InitialInspectScale = { "InitialInspectScale", nullptr, (EPropertyFlags)0x0010000000000801, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVWorldItem, InitialInspectScale), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InitialInspectScale_MetaData), NewProp_InitialInspectScale_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_NewRootComponent = { "NewRootComponent", nullptr, (EPropertyFlags)0x0124080000080008, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVWorldItem, NewRootComponent), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_NewRootComponent_MetaData), NewProp_NewRootComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_InnerSphereCollision = { "InnerSphereCollision", nullptr, (EPropertyFlags)0x0124080000080008, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVWorldItem, InnerSphereCollision), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InnerSphereCollision_MetaData), NewProp_InnerSphereCollision_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_InnerInteractIcon = { "InnerInteractIcon", nullptr, (EPropertyFlags)0x012408000009000d, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVWorldItem, InnerInteractIcon), Z_Construct_UClass_UBillboardComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InnerInteractIcon_MetaData), NewProp_InnerInteractIcon_MetaData) };
@@ -652,6 +672,8 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ADMVWorld
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_ItemData,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_InnerInteractRadius,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_OuterInteractRadius,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_InitialInspectRotation,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_InitialInspectScale,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_NewRootComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_InnerSphereCollision,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_InnerInteractIcon,
@@ -681,7 +703,7 @@ UObject* (*const Z_Construct_UClass_ADMVWorldItem_Statics::DependentSingletons[]
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ADMVWorldItem_Statics::DependentSingletons) < 16);
 const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_ADMVWorldItem_Statics::InterfaceParams[] = {
-	{ Z_Construct_UClass_UDMVInteractableItemsInterface_NoRegister, (int32)VTABLE_OFFSET(ADMVWorldItem, IDMVInteractableItemsInterface), false },  // 767820097
+	{ Z_Construct_UClass_UDMVInteractableItemsInterface_NoRegister, (int32)VTABLE_OFFSET(ADMVWorldItem, IDMVInteractableItemsInterface), false },  // 2492626293
 };
 const UECodeGen_Private::FClassParams Z_Construct_UClass_ADMVWorldItem_Statics::ClassParams = {
 	&ADMVWorldItem::StaticClass,
@@ -718,10 +740,10 @@ ADMVWorldItem::~ADMVWorldItem() {}
 struct Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_DMVWorldItem_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ADMVWorldItem, ADMVWorldItem::StaticClass, TEXT("ADMVWorldItem"), &Z_Registration_Info_UClass_ADMVWorldItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADMVWorldItem), 2543074621U) },
+		{ Z_Construct_UClass_ADMVWorldItem, ADMVWorldItem::StaticClass, TEXT("ADMVWorldItem"), &Z_Registration_Info_UClass_ADMVWorldItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADMVWorldItem), 95992947U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_DMVWorldItem_h_1655321231(TEXT("/Script/InteractableItems"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_DMVWorldItem_h_2746097531(TEXT("/Script/InteractableItems"),
 	Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_DMVWorldItem_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_DMVWorldItem_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

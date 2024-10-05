@@ -50,7 +50,10 @@ void ADMVWorldItem::OnInteract_Implementation(ACharacter* InteractingCharacter)
 		return;
 	}
 
-	UGameplayStatics::PlaySoundAtLocation(this, ItemInteractSound, GetActorLocation());
+	if(ItemInteractSound)
+	{
+		UGameplayStatics::PlaySoundAtLocation(this, ItemInteractSound, GetActorLocation());
+	}
 
 	switch (ItemUsability)
 	{
@@ -58,23 +61,12 @@ void ADMVWorldItem::OnInteract_Implementation(ACharacter* InteractingCharacter)
 		DirectTextRead(InteractingCharacter, PlayerController);
 		break;
 	case EItemUsability::Inspectable:
-		InspectItem(InteractingCharacter, PlayerController);
+		InspectableFunctionality(InteractingCharacter, PlayerController);
 		break;
 	case EItemUsability::OnlyStorable:
 		// TODO: StoreItem(InteractingCharacter, PlayerController);
 		break;
 	}
-}
-
-void ADMVWorldItem::Inspect_Implementation(ACharacter* InteractingCharacter, UStaticMesh* InspectedItem,
-                                           FText& GivenItemName, FText& GivenItemDescription)
-{
-	// TODO: IDMVInteractableItemsInterface::Inspect_Implementation();
-}
-
-void ADMVWorldItem::Read_Implementation(ACharacter* InteractingCharacter, FText& ReadableText)
-{
-	// TODO: IDMVInteractableItemsInterface::Read_Implementation();
 }
 
 void ADMVWorldItem::BeginPlay()
@@ -144,13 +136,52 @@ void ADMVWorldItem::DirectTextRead(ACharacter* InteractingCharacter, APlayerCont
 	}
 }
 
-void ADMVWorldItem::InspectItem(ACharacter* InteractingCharacter, APlayerController* PlayerController)
+void ADMVWorldItem::InspectableFunctionality(ACharacter* InteractingCharacter, APlayerController* PlayerController)
 {
-	ADMVInspectItem* InspectItem =
-		NewObject<ADMVInspectItem>(GetWorld(), ADMVInspectItem::StaticClass(), "Inspect");
+	// ADMVInspectItem* InspectItem =
+	// 	NewObject<ADMVInspectItem>(GetWorld(), ADMVInspectItem::StaticClass(), "Inspect");
+	
+	FActorSpawnParameters SpawnParams;
+	ADMVInspectItem* InspectItem = GetWorld()->SpawnActor<ADMVInspectItem>(ADMVInspectItem::StaticClass());
 	InspectItem->SetActorLocation(FVector(1000000000000, 0, 0));
-	InspectItem->SetInspectRotation(FRotator(0, 0, 0));
-	InspectItem->SetInspectScale(FVector(0, 0, 0));
+	
+	InspectItem->SetInspectRotation(InitialInspectRotation);
+	InspectItem->SetInspectScale(InitialInspectScale);
+
+	if (InspectItem->GetClass()->ImplementsInterface(UDMVInteractableItemsInterface::StaticClass()))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("InspectItem implements the interface"));
+		
+		// IDMVInteractableItemsInterface::Execute_Inspect(InspectItem, InteractingCharacter, ItemStaticMesh->GetStaticMesh(),
+  //           ItemName, ItemDescription);
+		
+		// IDMVInteractableItemsInterface::Inspect(InteractingCharacter, ItemStaticMesh->GetStaticMesh(),
+  //           ItemName, ItemDescription);
+		
+		// InspectItem->Execute_Inspect(InspectItem, InteractingCharacter, ItemStaticMesh->GetStaticMesh(),
+		// 	ItemName, ItemDescription);
+
+		// InspectItem->Inspect_Implementation(InteractingCharacter, ItemStaticMesh->GetStaticMesh(),
+		// 	ItemName, ItemDescription);
+
+		// Cast<IDMVInteractableItemsInterface>(InspectItem)->Inspect(InteractingCharacter, ItemStaticMesh->GetStaticMesh(),
+  //           ItemName, ItemDescription);
+
+		// Cast<IDMVInteractableItemsInterface>(InspectItem)->Execute_Inspect(InspectItem, InteractingCharacter, ItemStaticMesh->GetStaticMesh(),
+		// 	ItemName, ItemDescription);
+
+		Cast<IDMVInteractableItemsInterface>(InspectItem)->Inspect_Implementation(InteractingCharacter, ItemStaticMesh->GetStaticMesh(),
+			ItemName, ItemDescription);
+
+		// THIS IS NO FUCKING GOOD >:(
+		
+	}
+
+	// IDMVInteractableItemsInterface* InspectItemInterface = Cast<IDMVInteractableItemsInterface>(InspectItem);
+	// if (InspectItemInterface)
+ //    {
+ //        InspectItemInterface->Inspect(InteractingCharacter, ItemStaticMesh->GetStaticMesh(), ItemName, ItemDescription);
+ //    }
 }
 
 void ADMVWorldItem::ReadText(ACharacter* InteractingCharacter, APlayerController* PlayerController)
