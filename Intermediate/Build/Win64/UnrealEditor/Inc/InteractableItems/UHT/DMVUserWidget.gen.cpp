@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "InteractableItems/Public/UI/DMVUserWidget.h"
+#include "InteractableItems/Public/UI/Widget/DMVUserWidget.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeDMVUserWidget() {}
 
@@ -26,7 +26,7 @@ struct Z_Construct_UFunction_UDMVUserWidget_SetWidgetController_Statics
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/UI/DMVUserWidget.h" },
+		{ "ModuleRelativePath", "Public/UI/Widget/DMVUserWidget.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_InWidgetController;
@@ -69,7 +69,7 @@ struct Z_Construct_UFunction_UDMVUserWidget_WidgetControllerSet_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/UI/DMVUserWidget.h" },
+		{ "ModuleRelativePath", "Public/UI/Widget/DMVUserWidget.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -107,20 +107,20 @@ struct Z_Construct_UClass_UDMVUserWidget_Statics
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "/**\n * \n */" },
 #endif
-		{ "IncludePath", "UI/DMVUserWidget.h" },
-		{ "ModuleRelativePath", "Public/UI/DMVUserWidget.h" },
+		{ "IncludePath", "UI/Widget/DMVUserWidget.h" },
+		{ "ModuleRelativePath", "Public/UI/Widget/DMVUserWidget.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WidgetController_MetaData[] = {
 		{ "Category", "DMVUserWidget" },
-		{ "ModuleRelativePath", "Public/UI/DMVUserWidget.h" },
+		{ "ModuleRelativePath", "Public/UI/Widget/DMVUserWidget.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_WidgetController;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UDMVUserWidget_SetWidgetController, "SetWidgetController" }, // 1336407365
-		{ &Z_Construct_UFunction_UDMVUserWidget_WidgetControllerSet, "WidgetControllerSet" }, // 2742612401
+		{ &Z_Construct_UFunction_UDMVUserWidget_SetWidgetController, "SetWidgetController" }, // 1552047903
+		{ &Z_Construct_UFunction_UDMVUserWidget_WidgetControllerSet, "WidgetControllerSet" }, // 1436569328
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -171,14 +171,14 @@ UDMVUserWidget::~UDMVUserWidget() {}
 // End Class UDMVUserWidget
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_UI_DMVUserWidget_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_UI_Widget_DMVUserWidget_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UDMVUserWidget, UDMVUserWidget::StaticClass, TEXT("UDMVUserWidget"), &Z_Registration_Info_UClass_UDMVUserWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDMVUserWidget), 3878305823U) },
+		{ Z_Construct_UClass_UDMVUserWidget, UDMVUserWidget::StaticClass, TEXT("UDMVUserWidget"), &Z_Registration_Info_UClass_UDMVUserWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDMVUserWidget), 943968323U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_UI_DMVUserWidget_h_2641354327(TEXT("/Script/InteractableItems"),
-	Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_UI_DMVUserWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_UI_DMVUserWidget_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_UI_Widget_DMVUserWidget_h_1416462209(TEXT("/Script/InteractableItems"),
+	Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_UI_Widget_DMVUserWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_UI_Widget_DMVUserWidget_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

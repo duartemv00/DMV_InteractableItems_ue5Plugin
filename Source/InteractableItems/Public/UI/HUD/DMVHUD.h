@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/HUD.h"
-#include "UI/DMVUserWidget.h"
+#include "UI/Widget/DMVUserWidget_ItemInspect.h"
 #include "UI/WidgetController/DMVWidgetController_ItemInspect.h"
 #include "UI/WidgetController/DMVWidgetController_Overlay.h"
 #include "DMVHUD.generated.h"
@@ -22,23 +22,23 @@ class INTERACTABLEITEMS_API ADMVHUD : public AHUD
 public:
 	// BEGIN - Create Overlay Widget Implementation
 	UPROPERTY()
-	TObjectPtr<UDMVUserWidget> OverlayWidget;
+	TObjectPtr<UDMVUserWidget_ItemInspect> OverlayWidget;
 	UDMVWidgetController_Overlay* GetOverlayWidgetController(const FWidgetControllerParams& SendWCParams);
 	void InitOverlay(APlayerController* PC, APlayerState* PS);
 	// END - Create Overlay Widget Implementation
 
 	// BEGIN - Create Inspect Widget Implementation
 	UPROPERTY()
-	TObjectPtr<UDMVUserWidget> InspectWidget;
+	TObjectPtr<UDMVUserWidget_ItemInspect> ItemInspectWidget;
 	UDMVWidgetController_ItemInspect* GetItemInspectWidgetController(const FWidgetControllerParams& SendWCParams);
-	void InitInspect(APlayerController* PC, APlayerState* PS);
+	void InitInspect(APlayerController* PC, FName GivenItemName, FName GivenItemDescription);
 	// BEGIN - Create Inspect Widget Implementation
 	
 private:
 	UPROPERTY(EditAnywhere)
-	TSubclassOf<UDMVUserWidget> OverlayWidgetClass;
+	TSubclassOf<UDMVUserWidget_ItemInspect> OverlayWidgetClass;
 	UPROPERTY(EditAnywhere)
-	TSubclassOf<UDMVUserWidget> ItemInspectWidgetClass;
+	TSubclassOf<UDMVUserWidget_ItemInspect> ItemInspectWidgetClass;
 
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UDMVWidgetController_Overlay> OverlayWidgetControllerClass;

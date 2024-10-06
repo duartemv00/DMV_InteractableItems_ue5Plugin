@@ -1,11 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\source\\interactableitems\\private\\ui\\widget\\dmvuserwidget.cpp",
+        "Source": "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\source\\interactableitems\\private\\ui\\widget\\dmvuserwidget_iteminspect.cpp",
         "ProvidedModule": "",
         "PCH": "c:\\users\\duarte\\desktop\\fptemplate\\intermediate\\build\\win64\\x64\\fptemplateeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
         "Includes": [
             "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\interactableitems\\definitions.interactableitems.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\source\\interactableitems\\public\\ui\\widget\\dmvuserwidget_iteminspect.h",
             "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\source\\interactableitems\\public\\ui\\widget\\dmvuserwidget.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\umg\\public\\blueprint\\userwidget.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\umg\\public\\blueprint\\widgetchild.h",
@@ -35,7 +36,8 @@
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\umg\\public\\animation\\widgetanimationevents.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\umg\\uht\\widgetanimationevents.generated.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\umg\\uht\\userwidget.generated.h",
-            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\dmvuserwidget.generated.h"
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\dmvuserwidget.generated.h",
+            "c:\\users\\duarte\\desktop\\fptemplate\\plugins\\interactableitems\\intermediate\\build\\win64\\unrealeditor\\inc\\interactableitems\\uht\\dmvuserwidget_iteminspect.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

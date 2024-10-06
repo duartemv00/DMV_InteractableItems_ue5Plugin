@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameplayTagContainer.h"
 #include "Engine/DataAsset.h"
-#include "ItemTemplate.generated.h"
+#include "DAItemTemplate.generated.h"
 
 
 UENUM(BlueprintType)
@@ -67,7 +67,7 @@ struct FInteractableItemData
 };
 
 UCLASS(BlueprintType, Blueprintable)
-class INTERACTABLEITEMS_API UItemDatabase : public UDataAsset
+class INTERACTABLEITEMS_API UDAItemTemplate : public UDataAsset
 {
 	GENERATED_BODY()
 

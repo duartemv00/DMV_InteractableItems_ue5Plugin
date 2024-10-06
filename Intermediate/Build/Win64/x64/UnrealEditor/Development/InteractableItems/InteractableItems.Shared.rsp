@@ -297,6 +297,9 @@
 /I "Editor\Sequencer\Public"
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\SceneOutliner\UHT"
 /I "Editor\SceneOutliner\Public"
+/I "..\Plugins\EnhancedInput\Intermediate\Build\Win64\UnrealEditor\Inc\EnhancedInput\UHT"
+/I "..\Plugins\EnhancedInput\Source"
+/I "..\Plugins\EnhancedInput\Source\EnhancedInput\Public"
 /external:W0
 /external:I "ThirdParty\LibTiff\Source\Win64"
 /external:I "ThirdParty\LibTiff\Source"

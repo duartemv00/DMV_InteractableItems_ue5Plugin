@@ -5,7 +5,7 @@
 void UDMVWidgetController::SetWidgetControllerParams(const FWidgetControllerParams& InWidgetControllerParams)
 {
 	PlayerController = InWidgetControllerParams.PlayerController;
-	PlayerState = InWidgetControllerParams.PlayerState;
+	//PlayerState = InWidgetControllerParams.PlayerState;
 	
 	// TODO: Assign the rest necessary dependencies.
 }

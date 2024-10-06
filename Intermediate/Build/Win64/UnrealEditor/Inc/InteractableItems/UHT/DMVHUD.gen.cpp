@@ -14,7 +14,9 @@ COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 ENGINE_API UClass* Z_Construct_UClass_AHUD();
 INTERACTABLEITEMS_API UClass* Z_Construct_UClass_ADMVHUD();
 INTERACTABLEITEMS_API UClass* Z_Construct_UClass_ADMVHUD_NoRegister();
-INTERACTABLEITEMS_API UClass* Z_Construct_UClass_UDMVUserWidget_NoRegister();
+INTERACTABLEITEMS_API UClass* Z_Construct_UClass_UDMVUserWidget_ItemInspect_NoRegister();
+INTERACTABLEITEMS_API UClass* Z_Construct_UClass_UDMVWidgetController_ItemInspect_NoRegister();
+INTERACTABLEITEMS_API UClass* Z_Construct_UClass_UDMVWidgetController_Overlay_NoRegister();
 UPackage* Z_Construct_UPackage__Script_InteractableItems();
 // End Cross Module References
 
@@ -40,26 +42,56 @@ struct Z_Construct_UClass_ADMVHUD_Statics
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OverlayWidget_MetaData[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// BEGIN - Create Overlay Widget Implementation\n" },
+#endif
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/UI/HUD/DMVHUD.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "BEGIN - Create Overlay Widget Implementation" },
+#endif
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InspectWidget_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ItemInspectWidget_MetaData[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// BEGIN - Create Inspect Widget Implementation\n" },
+#endif
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/UI/HUD/DMVHUD.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "BEGIN - Create Inspect Widget Implementation" },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OverlayWidgetClass_MetaData[] = {
 		{ "Category", "DMVHUD" },
 		{ "ModuleRelativePath", "Public/UI/HUD/DMVHUD.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InspectWidgetClass_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ItemInspectWidgetClass_MetaData[] = {
 		{ "Category", "DMVHUD" },
+		{ "ModuleRelativePath", "Public/UI/HUD/DMVHUD.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OverlayWidgetControllerClass_MetaData[] = {
+		{ "Category", "DMVHUD" },
+		{ "ModuleRelativePath", "Public/UI/HUD/DMVHUD.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ItemInspectWidgetControllerClass_MetaData[] = {
+		{ "Category", "DMVHUD" },
+		{ "ModuleRelativePath", "Public/UI/HUD/DMVHUD.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OverlayWidgetController_MetaData[] = {
+		{ "ModuleRelativePath", "Public/UI/HUD/DMVHUD.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ItemInspectWidgetController_MetaData[] = {
 		{ "ModuleRelativePath", "Public/UI/HUD/DMVHUD.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_OverlayWidget;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_InspectWidget;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ItemInspectWidget;
 	static const UECodeGen_Private::FClassPropertyParams NewProp_OverlayWidgetClass;
-	static const UECodeGen_Private::FClassPropertyParams NewProp_InspectWidgetClass;
+	static const UECodeGen_Private::FClassPropertyParams NewProp_ItemInspectWidgetClass;
+	static const UECodeGen_Private::FClassPropertyParams NewProp_OverlayWidgetControllerClass;
+	static const UECodeGen_Private::FClassPropertyParams NewProp_ItemInspectWidgetControllerClass;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_OverlayWidgetController;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ItemInspectWidgetController;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -67,15 +99,23 @@ struct Z_Construct_UClass_ADMVHUD_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADMVHUD_Statics::NewProp_OverlayWidget = { "OverlayWidget", nullptr, (EPropertyFlags)0x0114000000080008, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVHUD, OverlayWidget), Z_Construct_UClass_UDMVUserWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OverlayWidget_MetaData), NewProp_OverlayWidget_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADMVHUD_Statics::NewProp_InspectWidget = { "InspectWidget", nullptr, (EPropertyFlags)0x0114000000080008, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVHUD, InspectWidget), Z_Construct_UClass_UDMVUserWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InspectWidget_MetaData), NewProp_InspectWidget_MetaData) };
-const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ADMVHUD_Statics::NewProp_OverlayWidgetClass = { "OverlayWidgetClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVHUD, OverlayWidgetClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UDMVUserWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OverlayWidgetClass_MetaData), NewProp_OverlayWidgetClass_MetaData) };
-const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ADMVHUD_Statics::NewProp_InspectWidgetClass = { "InspectWidgetClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVHUD, InspectWidgetClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UDMVUserWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InspectWidgetClass_MetaData), NewProp_InspectWidgetClass_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADMVHUD_Statics::NewProp_OverlayWidget = { "OverlayWidget", nullptr, (EPropertyFlags)0x0114000000080008, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVHUD, OverlayWidget), Z_Construct_UClass_UDMVUserWidget_ItemInspect_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OverlayWidget_MetaData), NewProp_OverlayWidget_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADMVHUD_Statics::NewProp_ItemInspectWidget = { "ItemInspectWidget", nullptr, (EPropertyFlags)0x0114000000080008, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVHUD, ItemInspectWidget), Z_Construct_UClass_UDMVUserWidget_ItemInspect_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemInspectWidget_MetaData), NewProp_ItemInspectWidget_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ADMVHUD_Statics::NewProp_OverlayWidgetClass = { "OverlayWidgetClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVHUD, OverlayWidgetClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UDMVUserWidget_ItemInspect_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OverlayWidgetClass_MetaData), NewProp_OverlayWidgetClass_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ADMVHUD_Statics::NewProp_ItemInspectWidgetClass = { "ItemInspectWidgetClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVHUD, ItemInspectWidgetClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UDMVUserWidget_ItemInspect_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemInspectWidgetClass_MetaData), NewProp_ItemInspectWidgetClass_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ADMVHUD_Statics::NewProp_OverlayWidgetControllerClass = { "OverlayWidgetControllerClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVHUD, OverlayWidgetControllerClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UDMVWidgetController_Overlay_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OverlayWidgetControllerClass_MetaData), NewProp_OverlayWidgetControllerClass_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ADMVHUD_Statics::NewProp_ItemInspectWidgetControllerClass = { "ItemInspectWidgetControllerClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVHUD, ItemInspectWidgetControllerClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UDMVWidgetController_ItemInspect_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemInspectWidgetControllerClass_MetaData), NewProp_ItemInspectWidgetControllerClass_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADMVHUD_Statics::NewProp_OverlayWidgetController = { "OverlayWidgetController", nullptr, (EPropertyFlags)0x0144000000000000, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVHUD, OverlayWidgetController), Z_Construct_UClass_UDMVWidgetController_Overlay_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OverlayWidgetController_MetaData), NewProp_OverlayWidgetController_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADMVHUD_Statics::NewProp_ItemInspectWidgetController = { "ItemInspectWidgetController", nullptr, (EPropertyFlags)0x0144000000000000, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVHUD, ItemInspectWidgetController), Z_Construct_UClass_UDMVWidgetController_ItemInspect_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemInspectWidgetController_MetaData), NewProp_ItemInspectWidgetController_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ADMVHUD_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVHUD_Statics::NewProp_OverlayWidget,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVHUD_Statics::NewProp_InspectWidget,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVHUD_Statics::NewProp_ItemInspectWidget,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVHUD_Statics::NewProp_OverlayWidgetClass,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVHUD_Statics::NewProp_InspectWidgetClass,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVHUD_Statics::NewProp_ItemInspectWidgetClass,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVHUD_Statics::NewProp_OverlayWidgetControllerClass,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVHUD_Statics::NewProp_ItemInspectWidgetControllerClass,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVHUD_Statics::NewProp_OverlayWidgetController,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADMVHUD_Statics::NewProp_ItemInspectWidgetController,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ADMVHUD_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ADMVHUD_Statics::DependentSingletons[])() = {
@@ -119,10 +159,10 @@ ADMVHUD::~ADMVHUD() {}
 struct Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_UI_HUD_DMVHUD_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ADMVHUD, ADMVHUD::StaticClass, TEXT("ADMVHUD"), &Z_Registration_Info_UClass_ADMVHUD, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADMVHUD), 1782603872U) },
+		{ Z_Construct_UClass_ADMVHUD, ADMVHUD::StaticClass, TEXT("ADMVHUD"), &Z_Registration_Info_UClass_ADMVHUD, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADMVHUD), 1265371398U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_UI_HUD_DMVHUD_h_1388675674(TEXT("/Script/InteractableItems"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_UI_HUD_DMVHUD_h_731476458(TEXT("/Script/InteractableItems"),
 	Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_UI_HUD_DMVHUD_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_UI_HUD_DMVHUD_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

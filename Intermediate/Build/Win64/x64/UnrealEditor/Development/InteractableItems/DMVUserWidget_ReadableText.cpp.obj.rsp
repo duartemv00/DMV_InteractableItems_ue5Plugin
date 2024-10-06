@@ -1,10 +1,10 @@
-"C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source\InteractableItems\Private\UI\Widget\DMVUserWidget.cpp"
+"C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Source\InteractableItems\Private\UI\Widget\DMVUserWidget_ReadableText.cpp"
 /FI"C:\Users\Duarte\Desktop\FPTemplate\Intermediate\Build\Win64\x64\FPTemplateEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
 /FI"C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Intermediate\Build\Win64\x64\UnrealEditor\Development\InteractableItems\Definitions.InteractableItems.h"
 /Yu"C:\Users\Duarte\Desktop\FPTemplate\Intermediate\Build\Win64\x64\FPTemplateEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
 /Fp"C:\Users\Duarte\Desktop\FPTemplate\Intermediate\Build\Win64\x64\FPTemplateEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.pch"
-/Fo"C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Intermediate\Build\Win64\x64\UnrealEditor\Development\InteractableItems\DMVUserWidget.cpp.obj"
-/sourceDependencies "C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Intermediate\Build\Win64\x64\UnrealEditor\Development\InteractableItems\DMVUserWidget.cpp.dep.json"
+/Fo"C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Intermediate\Build\Win64\x64\UnrealEditor\Development\InteractableItems\DMVUserWidget_ReadableText.cpp.obj"
+/sourceDependencies "C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Intermediate\Build\Win64\x64\UnrealEditor\Development\InteractableItems\DMVUserWidget_ReadableText.cpp.dep.json"
 @"C:\Users\Duarte\Desktop\FPTemplate\Plugins\InteractableItems\Intermediate\Build\Win64\x64\UnrealEditor\Development\InteractableItems\InteractableItems.Shared.rsp"
 /Zc:inline
 /nologo

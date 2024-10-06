@@ -9,7 +9,7 @@ public class InteractableItems : ModuleRules
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
 		PublicIncludePaths.AddRange(
-			new string[] {
+			new string[] { "EnhancedInput",
 				// ... add public include paths required here ...
 			}
 			);
@@ -25,7 +25,7 @@ public class InteractableItems : ModuleRules
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core", "GameplayTags", "UMG", "CoreUObject", "Engine", "InputCore", "UMGEditor", "UnrealEd",
+				"Core", "GameplayTags", "UMG", "CoreUObject", "Engine", "InputCore", "UMGEditor", "UnrealEd", "EnhancedInput", "EnhancedInput",
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);

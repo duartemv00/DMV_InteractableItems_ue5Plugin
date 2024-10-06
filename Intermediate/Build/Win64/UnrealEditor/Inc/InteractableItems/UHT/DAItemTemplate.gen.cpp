@@ -5,10 +5,10 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "InteractableItems/Public/ItemTemplate.h"
+#include "InteractableItems/Public/Actor/ItemTemplate/DAItemTemplate.h"
 #include "Runtime/GameplayTags/Classes/GameplayTagContainer.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-void EmptyLinkFunctionForGeneratedCodeItemTemplate() {}
+void EmptyLinkFunctionForGeneratedCodeDAItemTemplate() {}
 
 // Begin Cross Module References
 ENGINE_API UClass* Z_Construct_UClass_UDataAsset();
@@ -16,8 +16,8 @@ ENGINE_API UClass* Z_Construct_UClass_USoundWave_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UStreamableRenderAsset_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UTexture2D_NoRegister();
 GAMEPLAYTAGS_API UScriptStruct* Z_Construct_UScriptStruct_FGameplayTag();
-INTERACTABLEITEMS_API UClass* Z_Construct_UClass_UItemDatabase();
-INTERACTABLEITEMS_API UClass* Z_Construct_UClass_UItemDatabase_NoRegister();
+INTERACTABLEITEMS_API UClass* Z_Construct_UClass_UDAItemTemplate();
+INTERACTABLEITEMS_API UClass* Z_Construct_UClass_UDAItemTemplate_NoRegister();
 INTERACTABLEITEMS_API UEnum* Z_Construct_UEnum_InteractableItems_EItemUsability();
 INTERACTABLEITEMS_API UScriptStruct* Z_Construct_UScriptStruct_FInteractableItemData();
 UPackage* Z_Construct_UPackage__Script_InteractableItems();
@@ -44,7 +44,7 @@ struct Z_Construct_UEnum_InteractableItems_EItemUsability_Statics
 		{ "AutoRead.Name", "EItemUsability::AutoRead" },
 		{ "BlueprintType", "true" },
 		{ "Inspectable.Name", "EItemUsability::Inspectable" },
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "ModuleRelativePath", "Public/Actor/ItemTemplate/DAItemTemplate.h" },
 		{ "OnlyStorable.Name", "EItemUsability::OnlyStorable" },
 	};
 #endif // WITH_METADATA
@@ -96,44 +96,44 @@ struct Z_Construct_UScriptStruct_FInteractableItemData_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "ModuleRelativePath", "Public/Actor/ItemTemplate/DAItemTemplate.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Tag_MetaData[] = {
 		{ "Category", "InteractableItemData" },
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "// ***** Variables that determine the item's identity ***** //\n" },
 #endif
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "ModuleRelativePath", "Public/Actor/ItemTemplate/DAItemTemplate.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "***** Variables that determine the item's identity *****" },
 #endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Name_MetaData[] = {
 		{ "Category", "InteractableItemData" },
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "ModuleRelativePath", "Public/Actor/ItemTemplate/DAItemTemplate.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Description_MetaData[] = {
 		{ "Category", "InteractableItemData" },
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "ModuleRelativePath", "Public/Actor/ItemTemplate/DAItemTemplate.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Icon_MetaData[] = {
 		{ "Category", "InteractableItemData" },
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "ModuleRelativePath", "Public/Actor/ItemTemplate/DAItemTemplate.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Mesh_MetaData[] = {
 		{ "Category", "InteractableItemData" },
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "ModuleRelativePath", "Public/Actor/ItemTemplate/DAItemTemplate.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InteractSound_MetaData[] = {
 		{ "Category", "InteractableItemData" },
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "ModuleRelativePath", "Public/Actor/ItemTemplate/DAItemTemplate.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Usability_MetaData[] = {
 		{ "Category", "Item|Functionalities" },
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "// ***** Booleans that determine functionalities of the item ***** //\n" },
 #endif
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "ModuleRelativePath", "Public/Actor/ItemTemplate/DAItemTemplate.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "***** Booleans that determine functionalities of the item *****" },
 #endif
@@ -144,7 +144,7 @@ struct Z_Construct_UScriptStruct_FInteractableItemData_Statics
 		{ "Comment", "// True if the item is automatically read when interacted with\n" },
 #endif
 		{ "EditCondition", "Usability == EItemUsability::Inspectable" },
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "ModuleRelativePath", "Public/Actor/ItemTemplate/DAItemTemplate.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "True if the item is automatically read when interacted with" },
 #endif
@@ -152,14 +152,14 @@ struct Z_Construct_UScriptStruct_FInteractableItemData_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bStorable_MetaData[] = {
 		{ "Category", "Item|Functionalities" },
 		{ "EditCondition", "Usability == EItemUsability::Inspectable || Usability == EItemUsability::AutoRead" },
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "ModuleRelativePath", "Public/Actor/ItemTemplate/DAItemTemplate.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bHistory_MetaData[] = {
 		{ "Category", "Item|Functionalities" },
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "// True if you want the item to be stored in a history log of findings\n" },
 #endif
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "ModuleRelativePath", "Public/Actor/ItemTemplate/DAItemTemplate.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "True if you want the item to be stored in a history log of findings" },
 #endif
@@ -169,7 +169,7 @@ struct Z_Construct_UScriptStruct_FInteractableItemData_Statics
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "// True if you want the item to trigger a gameplay effect when used\n" },
 #endif
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "ModuleRelativePath", "Public/Actor/ItemTemplate/DAItemTemplate.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "True if you want the item to trigger a gameplay effect when used" },
 #endif
@@ -179,7 +179,7 @@ struct Z_Construct_UScriptStruct_FInteractableItemData_Statics
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "// True if you want to have multiple of the same item in your inventory\n" },
 #endif
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "ModuleRelativePath", "Public/Actor/ItemTemplate/DAItemTemplate.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "True if you want to have multiple of the same item in your inventory" },
 #endif
@@ -189,7 +189,7 @@ struct Z_Construct_UScriptStruct_FInteractableItemData_Statics
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "// True if you want the item to be constructable from other items\n" },
 #endif
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "ModuleRelativePath", "Public/Actor/ItemTemplate/DAItemTemplate.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "True if you want the item to be constructable from other items" },
 #endif
@@ -199,14 +199,14 @@ struct Z_Construct_UScriptStruct_FInteractableItemData_Statics
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "// ***** Variables that determine the item's characteristics ***** //\n" },
 #endif
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "ModuleRelativePath", "Public/Actor/ItemTemplate/DAItemTemplate.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "***** Variables that determine the item's characteristics *****" },
 #endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Value_MetaData[] = {
 		{ "Category", "InteractableItemData" },
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "ModuleRelativePath", "Public/Actor/ItemTemplate/DAItemTemplate.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStructPropertyParams NewProp_Tag;
@@ -245,7 +245,7 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FIntera
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_Mesh = { "Mesh", nullptr, (EPropertyFlags)0x0114000000000005, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FInteractableItemData, Mesh), Z_Construct_UClass_UStreamableRenderAsset_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Mesh_MetaData), NewProp_Mesh_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_InteractSound = { "InteractSound", nullptr, (EPropertyFlags)0x0114000000000005, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FInteractableItemData, InteractSound), Z_Construct_UClass_USoundWave_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InteractSound_MetaData), NewProp_InteractSound_MetaData) };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_Usability_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_Usability = { "Usability", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FInteractableItemData, Usability), Z_Construct_UEnum_InteractableItems_EItemUsability, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Usability_MetaData), NewProp_Usability_MetaData) }; // 1269168880
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_Usability = { "Usability", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FInteractableItemData, Usability), Z_Construct_UEnum_InteractableItems_EItemUsability, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Usability_MetaData), NewProp_Usability_MetaData) }; // 1369504476
 void Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewProp_bReadable_SetBit(void* Obj)
 {
 	((FInteractableItemData*)Obj)->bReadable = 1;
@@ -320,95 +320,95 @@ UScriptStruct* Z_Construct_UScriptStruct_FInteractableItemData()
 }
 // End ScriptStruct FInteractableItemData
 
-// Begin Class UItemDatabase
-void UItemDatabase::StaticRegisterNativesUItemDatabase()
+// Begin Class UDAItemTemplate
+void UDAItemTemplate::StaticRegisterNativesUDAItemTemplate()
 {
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UItemDatabase);
-UClass* Z_Construct_UClass_UItemDatabase_NoRegister()
+IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UDAItemTemplate);
+UClass* Z_Construct_UClass_UDAItemTemplate_NoRegister()
 {
-	return UItemDatabase::StaticClass();
+	return UDAItemTemplate::StaticClass();
 }
-struct Z_Construct_UClass_UItemDatabase_Statics
+struct Z_Construct_UClass_UDAItemTemplate_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
-		{ "IncludePath", "ItemTemplate.h" },
+		{ "IncludePath", "Actor/ItemTemplate/DAItemTemplate.h" },
 		{ "IsBlueprintBase", "true" },
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "ModuleRelativePath", "Public/Actor/ItemTemplate/DAItemTemplate.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Item_MetaData[] = {
-		{ "Category", "ItemDatabase" },
-		{ "ModuleRelativePath", "Public/ItemTemplate.h" },
+		{ "Category", "DAItemTemplate" },
+		{ "ModuleRelativePath", "Public/Actor/ItemTemplate/DAItemTemplate.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStructPropertyParams NewProp_Item;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
-		TCppClassTypeTraits<UItemDatabase>::IsAbstract,
+		TCppClassTypeTraits<UDAItemTemplate>::IsAbstract,
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UItemDatabase_Statics::NewProp_Item = { "Item", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UItemDatabase, Item), Z_Construct_UScriptStruct_FInteractableItemData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Item_MetaData), NewProp_Item_MetaData) }; // 3028230135
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UItemDatabase_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UItemDatabase_Statics::NewProp_Item,
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UDAItemTemplate_Statics::NewProp_Item = { "Item", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UDAItemTemplate, Item), Z_Construct_UScriptStruct_FInteractableItemData, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Item_MetaData), NewProp_Item_MetaData) }; // 1972562658
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UDAItemTemplate_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UDAItemTemplate_Statics::NewProp_Item,
 };
-static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UItemDatabase_Statics::PropPointers) < 2048);
-UObject* (*const Z_Construct_UClass_UItemDatabase_Statics::DependentSingletons[])() = {
+static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UDAItemTemplate_Statics::PropPointers) < 2048);
+UObject* (*const Z_Construct_UClass_UDAItemTemplate_Statics::DependentSingletons[])() = {
 	(UObject* (*)())Z_Construct_UClass_UDataAsset,
 	(UObject* (*)())Z_Construct_UPackage__Script_InteractableItems,
 };
-static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UItemDatabase_Statics::DependentSingletons) < 16);
-const UECodeGen_Private::FClassParams Z_Construct_UClass_UItemDatabase_Statics::ClassParams = {
-	&UItemDatabase::StaticClass,
+static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UDAItemTemplate_Statics::DependentSingletons) < 16);
+const UECodeGen_Private::FClassParams Z_Construct_UClass_UDAItemTemplate_Statics::ClassParams = {
+	&UDAItemTemplate::StaticClass,
 	nullptr,
 	&StaticCppClassTypeInfo,
 	DependentSingletons,
 	nullptr,
-	Z_Construct_UClass_UItemDatabase_Statics::PropPointers,
+	Z_Construct_UClass_UDAItemTemplate_Statics::PropPointers,
 	nullptr,
 	UE_ARRAY_COUNT(DependentSingletons),
 	0,
-	UE_ARRAY_COUNT(Z_Construct_UClass_UItemDatabase_Statics::PropPointers),
+	UE_ARRAY_COUNT(Z_Construct_UClass_UDAItemTemplate_Statics::PropPointers),
 	0,
 	0x001000A0u,
-	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UItemDatabase_Statics::Class_MetaDataParams), Z_Construct_UClass_UItemDatabase_Statics::Class_MetaDataParams)
+	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UDAItemTemplate_Statics::Class_MetaDataParams), Z_Construct_UClass_UDAItemTemplate_Statics::Class_MetaDataParams)
 };
-UClass* Z_Construct_UClass_UItemDatabase()
+UClass* Z_Construct_UClass_UDAItemTemplate()
 {
-	if (!Z_Registration_Info_UClass_UItemDatabase.OuterSingleton)
+	if (!Z_Registration_Info_UClass_UDAItemTemplate.OuterSingleton)
 	{
-		UECodeGen_Private::ConstructUClass(Z_Registration_Info_UClass_UItemDatabase.OuterSingleton, Z_Construct_UClass_UItemDatabase_Statics::ClassParams);
+		UECodeGen_Private::ConstructUClass(Z_Registration_Info_UClass_UDAItemTemplate.OuterSingleton, Z_Construct_UClass_UDAItemTemplate_Statics::ClassParams);
 	}
-	return Z_Registration_Info_UClass_UItemDatabase.OuterSingleton;
+	return Z_Registration_Info_UClass_UDAItemTemplate.OuterSingleton;
 }
-template<> INTERACTABLEITEMS_API UClass* StaticClass<UItemDatabase>()
+template<> INTERACTABLEITEMS_API UClass* StaticClass<UDAItemTemplate>()
 {
-	return UItemDatabase::StaticClass();
+	return UDAItemTemplate::StaticClass();
 }
-UItemDatabase::UItemDatabase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
-DEFINE_VTABLE_PTR_HELPER_CTOR(UItemDatabase);
-UItemDatabase::~UItemDatabase() {}
-// End Class UItemDatabase
+UDAItemTemplate::UDAItemTemplate(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
+DEFINE_VTABLE_PTR_HELPER_CTOR(UDAItemTemplate);
+UDAItemTemplate::~UDAItemTemplate() {}
+// End Class UDAItemTemplate
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_ItemTemplate_DAItemTemplate_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
-		{ EItemUsability_StaticEnum, TEXT("EItemUsability"), &Z_Registration_Info_UEnum_EItemUsability, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1269168880U) },
+		{ EItemUsability_StaticEnum, TEXT("EItemUsability"), &Z_Registration_Info_UEnum_EItemUsability, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1369504476U) },
 	};
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FInteractableItemData::StaticStruct, Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewStructOps, TEXT("InteractableItemData"), &Z_Registration_Info_UScriptStruct_InteractableItemData, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FInteractableItemData), 3028230135U) },
+		{ FInteractableItemData::StaticStruct, Z_Construct_UScriptStruct_FInteractableItemData_Statics::NewStructOps, TEXT("InteractableItemData"), &Z_Registration_Info_UScriptStruct_InteractableItemData, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FInteractableItemData), 1972562658U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UItemDatabase, UItemDatabase::StaticClass, TEXT("UItemDatabase"), &Z_Registration_Info_UClass_UItemDatabase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItemDatabase), 2023523053U) },
+		{ Z_Construct_UClass_UDAItemTemplate, UDAItemTemplate::StaticClass, TEXT("UDAItemTemplate"), &Z_Registration_Info_UClass_UDAItemTemplate, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDAItemTemplate), 3369231689U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_1081126798(TEXT("/Script/InteractableItems"),
-	Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_Statics::ClassInfo),
-	Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_Statics::ScriptStructInfo),
-	Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_ItemTemplate_h_Statics::EnumInfo));
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_ItemTemplate_DAItemTemplate_h_2180110900(TEXT("/Script/InteractableItems"),
+	Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_ItemTemplate_DAItemTemplate_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_ItemTemplate_DAItemTemplate_h_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_ItemTemplate_DAItemTemplate_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_ItemTemplate_DAItemTemplate_h_Statics::ScriptStructInfo),
+	Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_ItemTemplate_DAItemTemplate_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_ItemTemplate_DAItemTemplate_h_Statics::EnumInfo));
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

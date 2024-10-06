@@ -25,8 +25,8 @@ ENGINE_API UClass* Z_Construct_UClass_UTexture2D_NoRegister();
 GAMEPLAYTAGS_API UScriptStruct* Z_Construct_UScriptStruct_FGameplayTag();
 INTERACTABLEITEMS_API UClass* Z_Construct_UClass_ADMVWorldItem();
 INTERACTABLEITEMS_API UClass* Z_Construct_UClass_ADMVWorldItem_NoRegister();
+INTERACTABLEITEMS_API UClass* Z_Construct_UClass_UDAItemTemplate_NoRegister();
 INTERACTABLEITEMS_API UClass* Z_Construct_UClass_UDMVInteractableItemsInterface_NoRegister();
-INTERACTABLEITEMS_API UClass* Z_Construct_UClass_UItemDatabase_NoRegister();
 INTERACTABLEITEMS_API UEnum* Z_Construct_UEnum_InteractableItems_EItemUsability();
 UPackage* Z_Construct_UPackage__Script_InteractableItems();
 // End Cross Module References
@@ -154,7 +154,7 @@ struct Z_Construct_UFunction_ADMVWorldItem_GetIsItemUsability_Statics
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_ADMVWorldItem_GetIsItemUsability_Statics::NewProp_ReturnValue_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_ADMVWorldItem_GetIsItemUsability_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DMVWorldItem_eventGetIsItemUsability_Parms, ReturnValue), Z_Construct_UEnum_InteractableItems_EItemUsability, METADATA_PARAMS(0, nullptr) }; // 1269168880
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_ADMVWorldItem_GetIsItemUsability_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DMVWorldItem_eventGetIsItemUsability_Parms, ReturnValue), Z_Construct_UEnum_InteractableItems_EItemUsability, METADATA_PARAMS(0, nullptr) }; // 1369504476
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ADMVWorldItem_GetIsItemUsability_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADMVWorldItem_GetIsItemUsability_Statics::NewProp_ReturnValue_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADMVWorldItem_GetIsItemUsability_Statics::NewProp_ReturnValue,
@@ -238,7 +238,6 @@ struct Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics
 	struct DMVWorldItem_eventInspectableFunctionality_Parms
 	{
 		ACharacter* InteractingCharacter;
-		APlayerController* PlayerController;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -246,15 +245,12 @@ struct Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_InteractingCharacter;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_PlayerController;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::NewProp_InteractingCharacter = { "InteractingCharacter", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DMVWorldItem_eventInspectableFunctionality_Parms, InteractingCharacter), Z_Construct_UClass_ACharacter_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::NewProp_PlayerController = { "PlayerController", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(DMVWorldItem_eventInspectableFunctionality_Parms, PlayerController), Z_Construct_UClass_APlayerController_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::NewProp_InteractingCharacter,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::NewProp_PlayerController,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ADMVWorldItem, nullptr, "InspectableFunctionality", nullptr, nullptr, Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::PropPointers), sizeof(Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::DMVWorldItem_eventInspectableFunctionality_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality_Statics::Function_MetaDataParams) };
@@ -271,10 +267,9 @@ UFunction* Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality()
 DEFINE_FUNCTION(ADMVWorldItem::execInspectableFunctionality)
 {
 	P_GET_OBJECT(ACharacter,Z_Param_InteractingCharacter);
-	P_GET_OBJECT(APlayerController,Z_Param_PlayerController);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->InspectableFunctionality(Z_Param_InteractingCharacter,Z_Param_PlayerController);
+	P_THIS->InspectableFunctionality(Z_Param_InteractingCharacter);
 	P_NATIVE_END;
 }
 // End Class ADMVWorldItem Function InspectableFunctionality
@@ -604,9 +599,9 @@ struct Z_Construct_UClass_ADMVWorldItem_Statics
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_ADMVWorldItem_DirectTextRead, "DirectTextRead" }, // 51691305
 		{ &Z_Construct_UFunction_ADMVWorldItem_GetIsAutoRead, "GetIsAutoRead" }, // 999847931
-		{ &Z_Construct_UFunction_ADMVWorldItem_GetIsItemUsability, "GetIsItemUsability" }, // 3284555336
+		{ &Z_Construct_UFunction_ADMVWorldItem_GetIsItemUsability, "GetIsItemUsability" }, // 1556373358
 		{ &Z_Construct_UFunction_ADMVWorldItem_GetIsReadable, "GetIsReadable" }, // 2235589780
-		{ &Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality, "InspectableFunctionality" }, // 4057917778
+		{ &Z_Construct_UFunction_ADMVWorldItem_InspectableFunctionality, "InspectableFunctionality" }, // 1397169372
 		{ &Z_Construct_UFunction_ADMVWorldItem_ReadText, "ReadText" }, // 3275170285
 		{ &Z_Construct_UFunction_ADMVWorldItem_SetupItem, "SetupItem" }, // 1154750904
 		{ &Z_Construct_UFunction_ADMVWorldItem_StoreItem, "StoreItem" }, // 1291612986
@@ -618,7 +613,7 @@ struct Z_Construct_UClass_ADMVWorldItem_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_ItemData = { "ItemData", nullptr, (EPropertyFlags)0x0114000000000801, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVWorldItem, ItemData), Z_Construct_UClass_UItemDatabase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemData_MetaData), NewProp_ItemData_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_ItemData = { "ItemData", nullptr, (EPropertyFlags)0x0114000000000801, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVWorldItem, ItemData), Z_Construct_UClass_UDAItemTemplate_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemData_MetaData), NewProp_ItemData_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_InnerInteractRadius = { "InnerInteractRadius", nullptr, (EPropertyFlags)0x0010000000000801, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVWorldItem, InnerInteractRadius), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InnerInteractRadius_MetaData), NewProp_InnerInteractRadius_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_OuterInteractRadius = { "OuterInteractRadius", nullptr, (EPropertyFlags)0x0010000000000801, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVWorldItem, OuterInteractRadius), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OuterInteractRadius_MetaData), NewProp_OuterInteractRadius_MetaData) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_InitialInspectRotation = { "InitialInspectRotation", nullptr, (EPropertyFlags)0x0010000000000801, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVWorldItem, InitialInspectRotation), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InitialInspectRotation_MetaData), NewProp_InitialInspectRotation_MetaData) };
@@ -635,7 +630,7 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADMVWorldItem_
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_ItemStaticMesh = { "ItemStaticMesh", nullptr, (EPropertyFlags)0x012408000008001c, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVWorldItem, ItemStaticMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemStaticMesh_MetaData), NewProp_ItemStaticMesh_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_ItemInteractSound = { "ItemInteractSound", nullptr, (EPropertyFlags)0x0124080000000014, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVWorldItem, ItemInteractSound), Z_Construct_UClass_USoundWave_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemInteractSound_MetaData), NewProp_ItemInteractSound_MetaData) };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_ItemUsability_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_ItemUsability = { "ItemUsability", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVWorldItem, ItemUsability), Z_Construct_UEnum_InteractableItems_EItemUsability, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemUsability_MetaData), NewProp_ItemUsability_MetaData) }; // 1269168880
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_ItemUsability = { "ItemUsability", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADMVWorldItem, ItemUsability), Z_Construct_UEnum_InteractableItems_EItemUsability, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemUsability_MetaData), NewProp_ItemUsability_MetaData) }; // 1369504476
 void Z_Construct_UClass_ADMVWorldItem_Statics::NewProp_bIsReadable_SetBit(void* Obj)
 {
 	((ADMVWorldItem*)Obj)->bIsReadable = 1;
@@ -740,10 +735,10 @@ ADMVWorldItem::~ADMVWorldItem() {}
 struct Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_DMVWorldItem_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ADMVWorldItem, ADMVWorldItem::StaticClass, TEXT("ADMVWorldItem"), &Z_Registration_Info_UClass_ADMVWorldItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADMVWorldItem), 95992947U) },
+		{ Z_Construct_UClass_ADMVWorldItem, ADMVWorldItem::StaticClass, TEXT("ADMVWorldItem"), &Z_Registration_Info_UClass_ADMVWorldItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADMVWorldItem), 695120709U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_DMVWorldItem_h_2746097531(TEXT("/Script/InteractableItems"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_DMVWorldItem_h_1100084719(TEXT("/Script/InteractableItems"),
 	Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_DMVWorldItem_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Duarte_Desktop_FPTemplate_Plugins_InteractableItems_Source_InteractableItems_Public_Actor_DMVWorldItem_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

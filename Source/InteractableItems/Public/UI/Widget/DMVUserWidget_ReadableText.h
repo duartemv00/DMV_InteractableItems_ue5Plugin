@@ -4,13 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "DMVUserWidget.h"
-#include "ReadableTextWidget.generated.h"
+#include "DMVUserWidget_ReadableText.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class INTERACTABLEITEMS_API UReadableTextWidget : public UDMVUserWidget
+class INTERACTABLEITEMS_API UDMVUserWidget_ReadableText : public UDMVUserWidget
 {
 	GENERATED_BODY()
 };

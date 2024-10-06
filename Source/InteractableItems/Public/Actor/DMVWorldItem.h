@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "ItemTemplate.h"
+#include "Actor/ItemTemplate/DAItemTemplate.h"
 #include "GameFramework/Actor.h"
 #include "Interface/DMVInteractableItemsInterface.h"
 #include "DMVWorldItem.generated.h"
@@ -17,7 +17,7 @@ public:
 	ADMVWorldItem();
 
 	UPROPERTY(EditInstanceOnly)
-	TObjectPtr<UItemDatabase> ItemData;
+	TObjectPtr<UDAItemTemplate> ItemData;
 
 	// BEGIN - World Item properties
 	UPROPERTY(EditInstanceOnly)
@@ -44,7 +44,7 @@ protected:
 	void DirectTextRead(ACharacter* InteractingCharacter, APlayerController* PlayerController);
 
 	UFUNCTION()
-	void InspectableFunctionality(ACharacter* InteractingCharacter, APlayerController* PlayerController);
+	void InspectableFunctionality(ACharacter* InteractingCharacter);
 
 	UFUNCTION()
 	void ReadText(ACharacter* InteractingCharacter, APlayerController* PlayerController);

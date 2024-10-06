@@ -15,6 +15,7 @@ struct FWidgetControllerParams
 	GENERATED_BODY()
 
 	FWidgetControllerParams() {}
+	FWidgetControllerParams(APlayerController* PC) {}
 	FWidgetControllerParams(APlayerController* PC, APlayerState* PS) {}
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)

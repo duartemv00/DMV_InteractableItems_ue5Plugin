@@ -2,33 +2,33 @@
 	"RemapUnityFiles": 
 	{
 		"Module.InteractableItems.cpp.obj": [
+			"DAItemTemplate.gen.cpp.obj",
 			"DMVHUD.gen.cpp.obj",
 			"DMVInspectItem.gen.cpp.obj",
-			"DMVInspectWidget.gen.cpp.obj",
 			"DMVInteractableItemsInterface.gen.cpp.obj",
 			"DMVInteractableItemsTypes.gen.cpp.obj",
 			"DMVInventoryComponent.gen.cpp.obj",
 			"DMVUserWidget.gen.cpp.obj",
+			"DMVUserWidget_ItemInspect.gen.cpp.obj",
+			"DMVUserWidget_ReadableText.gen.cpp.obj",
 			"DMVWidgetController.gen.cpp.obj",
 			"DMVWidgetController_ItemInspect.gen.cpp.obj",
 			"DMVWidgetController_Overlay.gen.cpp.obj",
 			"DMVWorldItem.gen.cpp.obj",
 			"InteractableItems.init.gen.cpp.obj",
-			"ItemTemplate.gen.cpp.obj",
-			"ReadableTextWidget.gen.cpp.obj",
 			"DMVInspectItem.cpp.obj",
 			"DMVWorldItem.cpp.obj",
+			"DAItemTemplate.cpp.obj",
 			"DMVInteractableItemsComponent.cpp.obj",
 			"InteractableItems.cpp.obj",
 			"DMVInteractableItemsInterface.cpp.obj",
-			"ItemTemplate.cpp.obj",
-			"DMVInspectWidget.cpp.obj",
-			"DMVUserWidget.cpp.obj",
 			"DMVHUD.cpp.obj",
-			"ReadableTextWidget.cpp.obj",
 			"DMVWidgetController.cpp.obj",
 			"DMVWidgetController_ItemInspect.cpp.obj",
-			"DMVWidgetController_Overlay.cpp.obj"
+			"DMVWidgetController_Overlay.cpp.obj",
+			"DMVUserWidget.cpp.obj",
+			"DMVUserWidget_ItemInspect.cpp.obj",
+			"DMVUserWidget_ReadableText.cpp.obj"
 		]
 	}
 }
